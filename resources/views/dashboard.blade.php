@@ -103,7 +103,7 @@
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#base">
                   <i class="fas fa-layer-group"></i>
-                  <p>Base</p>
+                  <p>Menu Perusahaan</p>
                   <span class="caret"></span>
                 </a>
                 <div class="collapse" id="base">
@@ -159,7 +159,7 @@
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarLayouts">
                   <i class="fas fa-th-list"></i>
-                  <p>Sidebar Layouts</p>
+                  <p>Status Lamaran</p>
                   <span class="caret"></span>
                 </a>
                 <div class="collapse" id="sidebarLayouts">
