@@ -14,7 +14,7 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Job Listing</title>
+    <title>LokerIn</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
         <!--
@@ -712,7 +712,7 @@
                     </div>
                     <div class="col-lg-6 download-right">
                         <h1>Download the <br>
-                        Job Listing App Today!</h1>
+                       LokerIn App Today!</h1>
                         <p class="subs">
                             It won’t be a bigger problem to find one video game lover in your neighbor. Since the introduction of Virtual Game, it has been achieving great heights so far as its popularity and technological advancement are concerned.
                         </p>

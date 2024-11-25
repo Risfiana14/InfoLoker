@@ -2,14 +2,13 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
     /**
@@ -17,11 +16,26 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $primaryKey = 'id_user'; // Set primary key
+
+    protected $guarded = [];
+    // protected $fillable = [
+    //     'id_user',
+    //     'nama_user',
+    //     'username',
+    //     'password',
+    //     'email',
+    //     'no_hp',
+    //     'wa',
+    //     'pin',
+    //     'id_jenis_user',
+    //     'status_user',
+    //     'delete_mark',
+    //     'create_by',
+    //     'create_date',
+    //     'update_by',
+    //     'update_date',
+    // ];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -30,7 +44,6 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 
     /**
@@ -45,4 +58,30 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function jenisUser()
+    {
+        return $this->belongsTo(JenisUser::class, 'id_jenis_user');
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->jenisUser->jenis_user === 'admin';
+    }
+
+    public function isMahasiswa(): bool
+    {
+        return $this->jenisUser->jenis_user === 'mahasiswa';
+    }
+
+    public function isUser(): bool
+    {
+        return $this->jenisUser->jenis_user === 'user';
+    }
+
+    // Uncomment if needed
+    // public function isAnggota(): bool
+    // {
+    //     return $this->role === 'anggota';
+    // }
 }

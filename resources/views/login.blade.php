@@ -1,104 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    /* Reset and basic styles */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #1815c3, #21a3bd); /* Hijau gradien */
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-        /* Login Form Container */
-        .login-container {
-            background-color: #ffffff;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            padding: 20px 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
+    .login-container {
+      background: #ffffff;
+      color: #333;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
 
-        .login-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
+    .login-container .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #1815c3; /* Hijau tua */
+      margin-bottom: 20px;
+    }
 
-        /* Form Styles */
-        .login-form {
-            display: flex;
-            flex-direction: column;
-        }
+    .login-container form {
+      display: flex;
+      flex-direction: column;
+    }
 
-        .login-form label {
-            font-size: 14px;
-            margin-bottom: 5px;
-            color: #555;
-        }
+    .login-container input {
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
 
-        .login-form input {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-        }
+    .login-container button {
+      padding: 12px;
+      background: linear-gradient(45deg, #1815c3, #1815c3); /* Hijau dengan gradien */
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: transform 0.3s;
+    }
 
-        .login-form button {
-            padding: 10px;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+    .login-container button:hover {
+      transform: scale(1.05);
+    }
 
-        .login-form button:hover {
-            background-color: #0056b3;
-        }
+    .login-container .options {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
 
-        /* Footer Styles */
-        .login-footer {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 12px;
-            color: #777;
-        }
+    .login-container .options a {
+      color: #480dde; /* Hijau */
+      text-decoration: none;
+    }
 
-        .login-footer a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-
-        .login-footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    .login-container .options a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form class="login-form" action="your-action-url" method="POST">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter your username" required>
-            
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            
-            <button type="submit">Login</button>
-        </form>
-        <div class="login-footer">
-            <p>Don't have an account? <a href="#">Sign up</a></p>
+  <div class="login-container">
+    <div class="logo">LokerIn</div>
+    <form class="forms-sample" method="POST" action="{{ url('/login') }}">
+        @csrf
+        <div class="form-group">
+                <label for="exampleInputEmail3">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
         </div>
-    </div>
+        <div class="form-group">
+            <label for="exampleInputPassword4">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+        <div class="text-center mt-3">
+            <p class="mb-0">Jika belum memiliki akun, <a href="register">Sign up</a></p>
+        </div>
+    </form>
+  </div>
 </body>
 </html>
