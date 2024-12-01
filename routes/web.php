@@ -8,13 +8,13 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+// Route::get('/login', function () {
+//     return view('login');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-});
+})-> name ('dashboard');
 
 Route::get('/contact.html', function () {
     return view('contact');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -25,11 +26,12 @@ class LoginController extends Controller
             'email' => ['required', 'string','email'],
             'password' => ['required', 'string'],
         ]);  
+        Log::info('Mencoba login dengan email: '.$request->email);
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard');
+            return redirect()->intended(route('dashboard')); 
         }
-
+        Log::warning('Login gagal untuk email: '.$request->email);  // Log saat login gagal
         return back()->withErrors([
             'email' => 'Kombinasi email dan password tidak cocok.',
         ]);
