@@ -84,7 +84,7 @@
 <body>
   <div class="login-container">
     <div class="logo">LokerIn</div>
-    <form class="forms-sample" method="POST" action="{{ url('/login') }}">
+    <form class="forms-sample" method="POST" action="{{ route('dashboard') }}">
         @csrf
         <div class="form-group">
                 <label for="exampleInputEmail3">Email address</label>
