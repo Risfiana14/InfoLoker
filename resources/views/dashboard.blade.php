@@ -194,11 +194,10 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#tables">
-                  <i class="fas fa-table"></i>
-                  <p>Tables</p>
-                  <span class="caret"></span>
-                </a>
+                <a href="/role">
+                  <i class="fas fa-desktop"></i>
+                  <p>Role</p>
+                </a>   
                 <div class="collapse" id="tables">
                   <ul class="nav nav-collapse">
                     <li>
