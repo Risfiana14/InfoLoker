@@ -665,9 +665,14 @@
                       />
                     </div>
                     <span class="profile-username">
-                      <span class="op-7">Hi,</span>
-                      <span class="fw-bold">Hizrian</span>
-                    </span>
+                      <span class="fw-bold">
+                        @if(Auth::check())
+                          {{ Auth::user()->username }}
+                        @else
+                          Kenzie
+                        @endif
+                      </span>
+                    </span>                    
                   </a>
                   <ul class="dropdown-menu dropdown-user animated fadeIn">
                     <div class="dropdown-user-scroll scrollbar-outer">

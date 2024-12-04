@@ -63,6 +63,7 @@ class LoginController extends Controller
         ]);
     
         Auth::login($user);
+        Auth::user();
     
         if ($user->save()) {
             // Mengambil nama JENIS_USER berdasarkan ID_JENIS_USER
