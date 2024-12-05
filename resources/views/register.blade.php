@@ -13,11 +13,11 @@
         @csrf
         <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" name="username" placeholder="FalihMuachh">
+                <input type="text" class="form-control" name="username" placeholder="Nama Pengguna">
         </div>
         <div class="form-group">
-          <label for="username">name</label>
-          <input type="text" class="form-control" name="name" placeholder="FalihGantengg" >
+          <label for="username">Name</label>
+          <input type="text" class="form-control" name="name" placeholder="Nama" >
         </div>
         <div class="form-group">
                 <label for="exampleInputEmail3">Email address</label>

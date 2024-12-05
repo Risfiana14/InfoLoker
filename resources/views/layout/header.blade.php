@@ -6,11 +6,11 @@
           </div>
           <nav id="nav-menu-container">
             <ul class="nav-menu">
-              <li class="menu-active"><a href="index.html">Home</a></li>
+              <li class="menu-active"><a href="/">Home</a></li>
               <li><a href="about-us.html">About Us</a></li>
               <li><a href="category.html">Category</a></li>
               <li><a href="/price">Price</a></li>
-              <li><a href="blog-home.html">Blog</a></li>
+              <li><a href="blog-home">Blog</a></li>
               <li><a href="/contact">Contact</a></li>
               <li class="menu-has-children"><a href="">Pages</a>
                 <ul>
@@ -19,7 +19,7 @@
                     <li><a href="single.html">single</a></li>
                 </ul>
               </li>
-              <li><a class="ticker-btn" href="#">Signup</a></li>
+              <li><a class="ticker-btn" href="{{ route('register')}}">Signup</a></li>
               <li><a class="ticker-btn" href="{{ route('login')}}">Login</a></li>				          				          
             </ul>
           </nav><!-- #nav-menu-container -->		    		
