@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 
 Route::get('/', function () {
-    return view('landing');
+    return view('Belajar');
 });
 
 // Route::get('/login', function () {
