@@ -1,3 +1,5 @@
+@extends('layout.main')
+@section('content')
 <html lang="en">
  <head>
   <meta charset="utf-8"/>
@@ -193,149 +195,6 @@
        </div>
       </div>
      </div>
-     <!-- Right Section -->
-     {{-- <div class="w-1/3 p-4 overflow-y-auto">
-      <div class="bg-white p-4 rounded-lg shadow">
-       <h2 class="text-lg font-semibold mb-4">
-        Progress Belajar
-       </h2>
-       <div class="space-y-4">
-        <div class="flex items-center justify-between">
-         <div class="flex items-center">
-          <img alt="TPS icon" class="mr-4" height="40" src="https://storage.googleapis.com/a1aa/image/evPVQSljPvWrBy5vA1gZRInN7WlUTW2bjnaFWX207flyXf0nA.jpg" width="40"/>
-          <div>
-           <h3 class="font-semibold">
-            Pengetahuan Umum (TPS)
-           </h3>
-          </div>
-         </div>
-         <div class="w-1/2">
-          <div class="bg-gray-200 rounded-full h-4">
-           <div class="bg-gray-400 h-4 rounded-full" style="width: 0%;">
-           </div>
-          </div>
-          <p class="text-sm text-gray-500 text-right">
-           0.0%
-          </p>
-         </div>
-        </div>
-        <div class="flex items-center justify-between">
-         <div class="flex items-center">
-          <img alt="PBM icon" class="mr-4" height="40" src="https://storage.googleapis.com/a1aa/image/UV87e7qWgD3eOkBbUtzi5qWdWxLYhx766cAjl4FRnzqxXf0nA.jpg" width="40"/>
-          <div>
-           <h3 class="font-semibold">
-            Pemahaman Bacaan &amp; Menulis (PBM)
-           </h3>
-          </div>
-         </div>
-         <div class="w-1/2">
-          <div class="bg-gray-200 rounded-full h-4">
-           <div class="bg-gray-400 h-4 rounded-full" style="width: 0%;">
-           </div>
-          </div>
-          <p class="text-sm text-gray-500 text-right">
-           0.0%
-          </p>
-         </div>
-        </div>
-        <div class="flex items-center justify-between">
-         <div class="flex items-center">
-          <img alt="PPU icon" class="mr-4" height="40" src="https://storage.googleapis.com/a1aa/image/Wy2KGvYbehXWfUewwv4PGQ9xKD8I1oxDZ8hxruedcsP6e6TfE.jpg" width="40"/>
-          <div>
-           <h3 class="font-semibold">
-            Pengetahuan dan Pemahaman Umum (PPU)
-           </h3>
-          </div>
-         </div>
-         <div class="w-1/2">
-          <div class="bg-gray-200 rounded-full h-4">
-           <div class="bg-gray-400 h-4 rounded-full" style="width: 0%;">
-           </div>
-          </div>
-          <p class="text-sm text-gray-500 text-right">
-           0.0%
-          </p>
-         </div>
-        </div>
-        <div class="flex items-center justify-between">
-         <div class="flex items-center">
-          <img alt="PK icon" class="mr-4" height="40" src="https://storage.googleapis.com/a1aa/image/QOj96qyD8zLWBtw3M8xWsfOZQM59fmS7nDAjPgsmLhC3Xf0nA.jpg" width="40"/>
-          <div>
-           <h3 class="font-semibold">
-            Pengetahuan Kuantitatif (PK)
-           </h3>
-          </div>
-         </div>
-         <div class="w-1/2">
-          <div class="bg-gray-200 rounded-full h-4">
-           <div class="bg-gray-400 h-4 rounded-full" style="width: 0%;">
-           </div>
-          </div>
-          <p class="text-sm text-gray-500 text-right">
-           0.0%
-          </p>
-         </div>
-        </div>
-        <div class="flex items-center justify-between">
-         <div class="flex items-center">
-          <img alt="IDN icon" class="mr-4" height="40" src="https://storage.googleapis.com/a1aa/image/ChHwaHeK9fnqR0w83q5zXgefKavfRYvKJ12XfF58yug381neJA.jpg" width="40"/>
-          <div>
-           <h3 class="font-semibold">
-            Literasi Bahasa Indonesia
-           </h3>
-          </div>
-         </div>
-         <div class="w-1/2">
-          <div class="bg-gray-200 rounded-full h-4">
-           <div class="bg-gray-400 h-4 rounded-full" style="width: 0%;">
-           </div>
-          </div>
-          <p class="text-sm text-gray-500 text-right">
-           0.0%
-          </p>
-         </div>
-        </div>
-        <div class="flex items-center justify-between">
-         <div class="flex items-center">
-          <img alt="ENG icon" class="mr-4" height="40" src="https://storage.googleapis.com/a1aa/image/7a70URmmTU5bHlgQ7uEktEGXOS1wDFEdagWPV8i0zhF81neJA.jpg" width="40"/>
-          <div>
-           <h3 class="font-semibold">
-            Literasi Bahasa Inggris
-           </h3>
-          </div>
-         </div>
-         <div class="w-1/2">
-          <div class="bg-gray-200 rounded-full h-4">
-           <div class="bg-gray-400 h-4 rounded-full" style="width: 0%;">
-           </div>
-          </div>
-          <p class="text-sm text-gray-500 text-right">
-           0.0%
-          </p>
-         </div>
-        </div>
-        <div class="flex items-center justify-between">
-         <div class="flex items-center">
-          <img alt="Math icon" class="mr-4" height="40" src="https://storage.googleapis.com/a1aa/image/kaRMVeemyZtSzECN6zWBOhS1XsmLzlsJelXsA5oh4YWsvepPB.jpg" width="40"/>
-          <div>
-           <h3 class="font-semibold">
-            PENALARAN MATEMATIKA
-           </h3>
-          </div>
-         </div>
-         <div class="w-1/2">
-          <div class="bg-gray-200 rounded-full h-4">
-           <div class="bg-gray-400 h-4 rounded-full" style="width: 0%;">
-           </div>
-          </div>
-          <p class="text-sm text-gray-500 text-right">
-           0.0%
-          </p>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div> --}}
 
      <html>
  <head>
@@ -468,3 +327,4 @@
   </div>
  </body>
 </html>
+@endsection

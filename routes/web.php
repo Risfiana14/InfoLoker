@@ -5,10 +5,19 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\LowonganController;
+use App\Http\Controllers\AuthController;
+
 
 Route::get('/', function () {
-    return view('Belajar');
+    return view('layout.main');
 });
+Route::get('/', function () {
+    return view('dashboard');
+});
+
+// LOWONGAN
+Route::get('/lowongan', [LowonganController::class, 'index'])->name('lowongan.index');
 
 // Route::get('/login', function () {
 //     return view('login');
@@ -18,24 +27,25 @@ Route::get('/', function () {
 //     return view('dashboard');
 // });
 
-Route::get('/contact.html', function () {
+Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/price.html', function () {
+Route::get('/price', function () {
     return view('price');
 });
-
-Route::post('/dashboard', [dashboard::class, 'index'])->name('dashboard');
-Route::get('/login', [LoginController::class, 'indexlogin'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
+Route::get('/dashboard', [dashboard::class, 'index'])->name('dashboard')->middleware('auth');
+Route::post('/dashboard', [dashboard::class, 'index']);
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/login', [AuthController::class, 'indexlogin']);
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [RegisterController::class, 'indexregister'])->name('register');
-Route::post('/simpanregister', [RegisterController::class, 'register']);
+Route::post('/register', [RegisterController::class, 'register'])->name('register.post');
 // Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::post('/logout', [LoginController::class, 'Logout'])-> name('Logout.user');
+
 
 
 Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.create'); // Tambah Role
@@ -44,3 +54,4 @@ Route::get('/roles', [RoleController::class, 'index'])->name('roles.index'); // 
 Route::get('/roles/{role}/edit', [RoleController::class, 'edit'])->name('roles.edit'); // Edit Role
 Route::put('/roles/{role}', [RoleController::class, 'update'])->name('roles.update'); // Update Role
 Route::delete('/roles/{role}', [RoleController::class, 'destroy'])->name('roles.destroy'); // Hapus Role
+
