@@ -6,10 +6,14 @@ use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\LowonganController;
+use App\Http\Controllers\AuthController;
 
 
 Route::get('/', function () {
     return view('layout.main');
+});
+Route::get('/', function () {
+    return view('dashboard');
 });
 
 // LOWONGAN
@@ -41,8 +45,7 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-<<<<<<< HEAD
-Route::post('/logout', [LoginController::class, 'Logout'])-> name('Logout.user');
+
 
 
 Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.create'); // Tambah Role
@@ -51,6 +54,4 @@ Route::get('/roles', [RoleController::class, 'index'])->name('roles.index'); // 
 Route::get('/roles/{role}/edit', [RoleController::class, 'edit'])->name('roles.edit'); // Edit Role
 Route::put('/roles/{role}', [RoleController::class, 'update'])->name('roles.update'); // Update Role
 Route::delete('/roles/{role}', [RoleController::class, 'destroy'])->name('roles.destroy'); // Hapus Role
-=======
-Route::post('/logout', [AuthController::class, 'Logout'])-> name('Logout.user');
->>>>>>> 428ad6a648937e2c6667e28f000de9a9a61e9300
+
