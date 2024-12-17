@@ -5,10 +5,14 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\LowonganController;
 
 Route::get('/', function () {
-    return view('Belajar');
+    return view('layout.main');
 });
+
+// LOWONGAN
+Route::get('/lowongan', [LowonganController::class, 'index'])->name('lowongan.index');
 
 // Route::get('/login', function () {
 //     return view('login');
