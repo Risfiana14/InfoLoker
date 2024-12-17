@@ -87,7 +87,7 @@
                 <div class="collapse" id="dashboard">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="../demo1/index.html">
+                      <a href="{{route('dashboard')}}">
                         <span class="sub-item">Dashboard 1</span>
                       </a>
                     </li>
@@ -664,9 +664,14 @@
                       />
                     </div>
                     <span class="profile-username">
-                      <span class="op-7">Hi,</span>
-                      <span class="fw-bold">Hizrian</span>
-                    </span>
+                      <span class="fw-bold">
+                        @if(Auth::check())
+                          {{ Auth::user()->username }}
+                        @else
+                          Kenzie
+                        @endif
+                      </span>
+                    </span>                    
                   </a>
                   <ul class="dropdown-menu dropdown-user animated fadeIn">
                     <div class="dropdown-user-scroll scrollbar-outer">

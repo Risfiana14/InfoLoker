@@ -11,19 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-    Schema::create('users', function (Blueprint $table) {
-        $table->id();
-        $table->string('name');
-        $table->string('email')->unique();
-        $table->string('password');
-        $table->text('bio')->nullable(); // Deskripsi pengguna
-        $table->text('education')->nullable(); // Pendidikan
-        $table->text('work_experience')->nullable(); // Pengalaman kerja
-        $table->json('skills')->nullable(); // Keterampilan (bisa disimpan dalam format JSON)
-        $table->string('cv')->nullable(); // Path ke file CV
-        $table->timestamps();
-    });  
-}  
+        Schema::create('users', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->nullable(false);  // Menambahkan NOT NULL pada kolom name
+            $table->string('username')->nullable(false);
+            $table->string('email');
+            $table->string('password')->unique();
+            $table->timestamps();
+        });
+    }      
     /**
      * Reverse the migrations.
      */
