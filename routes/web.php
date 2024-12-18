@@ -37,3 +37,9 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::delete('/roles/{role}', [RoleController::class, 'destroy'])->name('roles.destroy');
 
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::get('/job', [JobController::class, 'index'])->name('job.index');
