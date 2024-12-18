@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\job_applicantsController;
 
 Route::get('/', function () {
     return view('landing');
@@ -26,7 +27,7 @@ Route::get('/price.html', function () {
     return view('price');
 });
 
-Route::post('/dashboard', [dashboard::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [dashboard::class, 'index'])->name('dashboard');
 Route::get('/login', [LoginController::class, 'indexlogin'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'indexregister'])->name('register');
@@ -44,3 +45,10 @@ Route::get('/roles', [RoleController::class, 'index'])->name('roles.index'); // 
 Route::get('/roles/{role}/edit', [RoleController::class, 'edit'])->name('roles.edit'); // Edit Role
 Route::put('/roles/{role}', [RoleController::class, 'update'])->name('roles.update'); // Update Role
 Route::delete('/roles/{role}', [RoleController::class, 'destroy'])->name('roles.destroy'); // Hapus Role
+
+Route::get('/pelamar', [job_applicantsController::class, 'index'])->name('pelamar.index');
+Route::post('/pelamar', [job_applicantsController::class, 'store'])->name('pelamar.store');
+Route::get('/pelamar/{id}', [job_applicantsController::class, 'show'])->name('pelamar.show');
+Route::post('pelamar/{id}', [job_applicantsController::class, 'update'])->name('pelamar.update');
+Route::delete('pelamar/{id}', [job_applicantsController::class, 'destroy'])->name('pelamar.destroy');
+

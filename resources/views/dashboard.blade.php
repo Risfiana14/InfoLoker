@@ -87,7 +87,7 @@
                 <div class="collapse" id="dashboard">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="../demo1/index.html">
+                      <a href="{{ route('dashboard')}}">
                         <span class="sub-item">Dashboard 1</span>
                       </a>
                     </li>
@@ -165,13 +165,8 @@
                 <div class="collapse" id="sidebarLayouts">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="sidebar-style-2.html">
-                        <span class="sub-item">Sidebar Style 2</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="icon-menu.html">
-                        <span class="sub-item">Icon Menu</span>
+                      <a href="{{ route('pelamar.index')}}">
+                        <span class="sub-item">pelamar</span>
                       </a>
                     </li>
                   </ul>
