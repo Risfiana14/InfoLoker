@@ -24,16 +24,61 @@
       </div>
       <!-- End Logo Header -->
     </div>
+    {{-- <li class="nav-item topbar-user dropdown hidden-caret">
+        <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#"
+            aria-expanded="false">
+            <div class="avatar-sm">
+                <img src="assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
+            </div>
+            <span class="profile-username">
+                <span class="op-7">Hi,</span>
+                <span class="fw-bold">Hizrian</span>
+            </span>
+        </a>
+        <ul class="dropdown-menu dropdown-user animated fadeIn">
+            <div class="dropdown-user-scroll scrollbar-outer">
+                <li>
+                    <div class="user-box">
+                        <div class="avatar-lg">
+                            <img src="assets/img/profile.jpg" alt="image profile"
+                                class="avatar-img rounded" />
+                        </div>
+                        <div class="u-text">
+                            <h4>Hizrian</h4>
+                            <p class="text-muted">hello@example.com</p>
+                            <a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/profile">My Profile</a>
+                    <a class="dropdown-item" href="#">My Balance</a>
+                    <a class="dropdown-item" href="#">Inbox</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Account Setting</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+                    @csrf
+                </li>
+            </div>
+        </ul>
+    </li> --}}
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
       <div class="sidebar-content">
         <ul class="nav nav-secondary">
+            {{-- <li class="nav-item">
+                <a href="{{ route('asep') }}">
+                  <i class="fas fa-desktop"></i>
+                  <p>Profile</p>
+                </a>
+              </li> --}}
           <li class="nav-item active">
             <a
               data-bs-toggle="collapse"
               href="#dashboard"
               class="collapsed"
-              aria-expanded="false"
-            >
+              aria-expanded="false">
               <i class="fas fa-home"></i>
               <p>Dashboard</p>
               <span class="caret"></span>

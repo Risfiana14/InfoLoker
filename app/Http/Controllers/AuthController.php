@@ -44,13 +44,13 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255',
             'email' => 'required|email|unique:users',
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        DB::insert('INSERT INTO users (name, email, password, created_at, updated_at) VALUES (?, ?, ?, ?, ?)', [
-            $request->name,
+        DB::insert('INSERT INTO users (username, email, password, created_at, updated_at) VALUES (?, ?, ?, ?, ?)', [
+            $request->username,
             $request->email,
             Hash::make($request->password),
             now(),

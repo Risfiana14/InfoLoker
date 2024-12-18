@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\LowonganController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 
 // MIDLEWARE
 Route::middleware(['web', 'guest'])->group(function () {
@@ -22,8 +23,18 @@ Route::middleware(['web', 'auth'])->group(function () {
     // Logout
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
+    // PROFILE
+    // Route::get('/profile', [ProfileController::class, 'index'])->name('asep');
+    // Route::get('/profile', function () {
+    //     return view('profile.index');
+    // });
+
     // LOWONGAN
     Route::get('/lowongan', [LowonganController::class, 'index'])->name('lamongan');
+    // Route::post('/lowongan/lamaran', [LowonganController::class, 'lamar'])->name('lowongan.lamar');
+    //     Route::post('/lowongan/lamaran', function () {
+    //     return view('lowongan.lamar');
+    // });
 
     // Dashboard
     Route::get('/dashboard', [dashboard::class, 'index'])->name('dashboard');

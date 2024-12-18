@@ -79,9 +79,11 @@
                                 Bali
                             </p>
                         </div>
-                        <button class="bg-black text-white text-sm font-semibold py-1 px-4 rounded">
-                            Apply
-                        </button>
+                        <a href="/lowongan/lamar"> <!-- MASALAH BESAR PADA HREF TIDAK BISA MELLIHAT ROUTE -->
+                            <button class="bg-black text-white text-sm font-semibold py-1 px-4 rounded">
+                                Apply
+                            </button>
+                        </a>
                     </div>
                 </div>
                 <!-- Job Card 2 -->
@@ -373,7 +375,7 @@
                     </div>
                 </div>
                 <!-- Job Card 8 -->
-               
+
           </div>
          </div>
         </body>

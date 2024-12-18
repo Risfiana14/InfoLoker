@@ -20,4 +20,11 @@ class LowonganController extends Controller
         // Mengembalikan tampilan halaman lowongan.index dengan data
         return view('lowongan.index', $data);
     }
+
+    public function lamar()
+    {
+        // Logic yang diperlukan untuk menampilkan halaman lamaran
+        return view('lowongan.lamar'); // Ganti 'lamaran' dengan nama view yang sesuai
+    }
+
 }

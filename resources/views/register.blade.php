@@ -14,8 +14,8 @@
             <form method="POST" action="{{ route('register.post') }}">
                 @csrf
                 <div>
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" value="{{ old('name') }}" required>
+                    <label for="name">Username</label>
+                    <input type="text" id="username" name="username" value="{{ old('name') }}" required>
                     @error('name')
                         <small>{{ $message }}</small>
                     @enderror
