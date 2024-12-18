@@ -87,7 +87,15 @@
                 <div class="collapse" id="dashboard">
                   <ul class="nav nav-collapse">
                     <li>
+<<<<<<< HEAD
+<<<<<<< HEAD
+                      <a href="{{ route('dashboard')}}">
+=======
                       <a href="{{route('dashboard')}}">
+>>>>>>> db906b5e9dad29d3432dde5b66051fcc50de1cba
+=======
+                      <a href="{{route('dashboard')}}">
+>>>>>>> db906b5e9dad29d3432dde5b66051fcc50de1cba
                         <span class="sub-item">Dashboard 1</span>
                       </a>
                     </li>
@@ -165,13 +173,8 @@
                 <div class="collapse" id="sidebarLayouts">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="sidebar-style-2.html">
-                        <span class="sub-item">Sidebar Style 2</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="icon-menu.html">
-                        <span class="sub-item">Icon Menu</span>
+                      <a href="{{ route('pelamar.index')}}">
+                        <span class="sub-item">pelamar</span>
                       </a>
                     </li>
                   </ul>
@@ -707,8 +710,12 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Account Setting</a>
                         <div class="dropdown-divider"></div>
+<<<<<<< HEAD
                         {{-- <form action="{{ route('Logout.user')}}" method="POST"> --}}
                             <a class="dropdown-item" href="{{ route('logout')}}">Logout</a>
+=======
+                        <form action="{{ route('logout')}}" method="POST">
+>>>>>>> main
                           @csrf
                         <button class="dropdown-item" type="submit">
                           Logout
