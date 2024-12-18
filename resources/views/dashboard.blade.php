@@ -197,7 +197,7 @@
                 <a href="/role">
                   <i class="fas fa-desktop"></i>
                   <p>Role</p>
-                </a>   
+                </a>
                 <div class="collapse" id="tables">
                   <ul class="nav nav-collapse">
                     <li>
@@ -671,7 +671,7 @@
                           Kenzie
                         @endif
                       </span>
-                    </span>                    
+                    </span>
                   </a>
                   <ul class="dropdown-menu dropdown-user animated fadeIn">
                     <div class="dropdown-user-scroll scrollbar-outer">
@@ -703,9 +703,9 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Account Setting</a>
                         <div class="dropdown-divider"></div>
-                        <form action="{{ route('Logout.user')}}" method="POST">
+                        {{-- <form action="{{ route('Logout.user')}}" method="POST"> --}}
+                            <a class="dropdown-item" href="{{ route('logout')}}">Logout</a>
                           @csrf
-                        {{-- <a class="dropdown-item" href="{{ route('logout')}}">Logout</a> --}}
                         <button class="dropdown-item" type="submit">
                           Logout
                         </button>
@@ -723,8 +723,7 @@
         <div class="container">
           <div class="page-inner">
             <div
-              class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
-            >
+              class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
               <div>
                 <h3 class="fw-bold mb-3">Dashboard</h3>
                 <h6 class="op-7 mb-2">Free Bootstrap 5 Admin Dashboard</h6>

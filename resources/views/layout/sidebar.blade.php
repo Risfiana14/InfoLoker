@@ -50,7 +50,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{ route('lowongan.index') }}">
+            <a href="{{ route('lamongan') }}">
               <i class="fas fa-desktop"></i>
               <p>Lowongan Pekerjaan</p>
             </a>

@@ -74,12 +74,12 @@
             </div>
             <!-- End Logo Header -->
           </div>
+          <div>
           <!-- Navbar Header -->
     @include('layout.navbar')
           <!-- End Navbar -->
-        </div>
 
-        @yield('content')
+    @yield('content')
 
     @include('layout.footer')
       </div>

@@ -1,37 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ asset('assets/css/login.css')}}">
-  <title>Login Page</title>
-</head>
-<body>
-  <div class="login-container">
-    <div class="logo">LokerIn</div>
-    <form class="forms-sample" method="POST" action="{{ route('register.post') }}">
-        @csrf
-        <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" name="username" placeholder="Nama Pengguna">
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
+        <title>Login Page</title>
+    </head>
+
+    <body>
+        <div class="login-container">
+            <div class="logo">LokerIn</div>
+            <form method="POST" action="{{ route('register.post') }}">
+                @csrf
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" value="{{ old('name') }}" required>
+                    @error('name')
+                        <small>{{ $message }}</small>
+                    @enderror
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="{{ old('email') }}" required>
+                    @error('email')
+                        <small>{{ $message }}</small>
+                    @enderror
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    @error('password')
+                        <small>{{ $message }}</small>
+                    @enderror
+                </div>
+                <div>
+                    <label for="password_confirmation">Confirm Password</label>
+                    <input type="password" id="password_confirmation" name="password_confirmation" required>
+                </div>
+                <button type="submit">Register</button>
+                <p>Sudah punya akun? <a href="{{ route('login') }}">Login</a></p>
+            </form>
         </div>
-        <div class="form-group">
-          <label for="username">Name</label>
-          <input type="text" class="form-control" name="name" placeholder="Nama" >
-        </div>
-        <div class="form-group">
-                <label for="exampleInputEmail3">Email address</label>
-                <input type="text" class="form-control" name="email" placeholder="Email">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword4">Password</label>
-            <input type="text" class="form-control" name="password" placeholder="Password">
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Save</button>
-        <div class="text-center mt-3">
-            <p class="mb-0">Jika sudah memiliki akun, <a href="{{route('login')}}">Sign in</a></p>
-        </div>
-    </form>
-  </div>
-</body>
-</html>
+    </body>
+
+    </html>

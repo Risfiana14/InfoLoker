@@ -1,330 +1,381 @@
 @extends('layout.main')
 @section('content')
-<html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Progress Belajar
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
- </head>
- <body class="bg-gray-100">
-  <div class="flex h-screen">
-   <!-- Sidebar -->
-   <div class="w-16 bg-white border-r flex flex-col items-center py-4">
-    <img alt="User avatar" class="rounded-full mb-4" height="40" src="https://storage.googleapis.com/a1aa/image/L2Z7X0C8frUwTyrxnePUSS3fgs5dNSv0iVoBjhrAUqWpvepPB.jpg" width="40"/>
-    <i class="fas fa-home text-xl mb-6">
-    </i>
-    <i class="fas fa-calendar-alt text-xl mb-6">
-    </i>
-    <i class="fas fa-bookmark text-xl mb-6">
-    </i>
-    <i class="fas fa-bell text-xl mb-6">
-    </i>
-    <i class="fas fa-comment-dots text-xl">
-    </i>
-   </div>
-   <!-- Main Content -->
-   <div class="flex-1 flex flex-col">
-    <!-- Header -->
-    <div class="bg-white p-4 border-b flex justify-between items-center">
-     <h1 class="text-xl font-semibold">
-      Progress Belajar
-     </h1>
-    </div>
-    <!-- Content -->
-    <div class="flex-1 flex overflow-hidden">
-     <!-- Left Section -->
-     <div class="w-2/3 p-4 overflow-y-auto">
-      <div class="bg-blue-600 text-white p-4 rounded-lg mb-4">
-       <h2 class="text-lg font-semibold">
-        Materi Seleksi Kompetensi Dasar (SKD)
-       </h2>
-       <div class="bg-gray-200 rounded-full h-4 mt-2">
-        <div class="bg-gray-400 h-4 rounded-full" style="width: 0%;">
-        </div>
-       </div>
-       <p class="text-center mt-2">
-        0%
-       </p>
-      </div>
-      <!-- List of Courses -->
-      <div class="space-y-4">
-       <div class="bg-white p-4 rounded-lg shadow flex items-center justify-between">
-        <div class="flex items-center">
-         <img alt="TPS icon" class="mr-4" height="40" src="https://storage.googleapis.com/a1aa/image/evPVQSljPvWrBy5vA1gZRInN7WlUTW2bjnaFWX207flyXf0nA.jpg" width="40"/>
-         <div>
-          <h3 class="font-semibold">
-           Pengetahuan Umum (TPS)
-          </h3>
-          <p class="text-gray-500 text-sm">
-           <i class="fas fa-video">
-           </i>
-           0/3 Video
-           <i class="fas fa-file-alt ml-4">
-           </i>
-           0/1 Dokumen
-          </p>
-         </div>
-        </div>
-        <i class="fas fa-chevron-right text-gray-400">
-        </i>
-       </div>
-       <div class="bg-white p-4 rounded-lg shadow flex items-center justify-between">
-        <div class="flex items-center">
-         <img alt="PBM icon" class="mr-4" height="40" src="https://storage.googleapis.com/a1aa/image/UV87e7qWgD3eOkBbUtzi5qWdWxLYhx766cAjl4FRnzqxXf0nA.jpg" width="40"/>
-         <div>
-          <h3 class="font-semibold">
-           Pemahaman Bacaan &amp; Menulis (PBM)
-          </h3>
-          <p class="text-gray-500 text-sm">
-           <i class="fas fa-video">
-           </i>
-           0/20 Video
-           <i class="fas fa-file-alt ml-4">
-           </i>
-           0/1 Dokumen
-          </p>
-         </div>
-        </div>
-        <i class="fas fa-chevron-right text-gray-400">
-        </i>
-       </div>
-       <div class="bg-white p-4 rounded-lg shadow flex items-center justify-between">
-        <div class="flex items-center">
-         <img alt="PPU icon" class="mr-4" height="40" src="https://storage.googleapis.com/a1aa/image/Wy2KGvYbehXWfUewwv4PGQ9xKD8I1oxDZ8hxruedcsP6e6TfE.jpg" width="40"/>
-         <div>
-          <h3 class="font-semibold">
-           Pengetahuan dan Pemahaman Umum (PPU)
-          </h3>
-          <p class="text-gray-500 text-sm">
-           <i class="fas fa-video">
-           </i>
-           0/5 Video
-           <i class="fas fa-file-alt ml-4">
-           </i>
-           0/1 Dokumen
-          </p>
-         </div>
-        </div>
-        <i class="fas fa-chevron-right text-gray-400">
-        </i>
-       </div>
-       <div class="bg-white p-4 rounded-lg shadow flex items-center justify-between">
-        <div class="flex items-center">
-         <img alt="PK icon" class="mr-4" height="40" src="https://storage.googleapis.com/a1aa/image/QOj96qyD8zLWBtw3M8xWsfOZQM59fmS7nDAjPgsmLhC3Xf0nA.jpg" width="40"/>
-         <div>
-          <h3 class="font-semibold">
-           Pengetahuan Kuantitatif (PK)
-          </h3>
-          <p class="text-gray-500 text-sm">
-           <i class="fas fa-video">
-           </i>
-           0/14 Video
-           <i class="fas fa-file-alt ml-4">
-           </i>
-           0/1 Dokumen
-          </p>
-         </div>
-        </div>
-        <i class="fas fa-chevron-right text-gray-400">
-        </i>
-       </div>
-       <div class="bg-white p-4 rounded-lg shadow flex items-center justify-between">
-        <div class="flex items-center">
-         <img alt="IDN icon" class="mr-4" height="40" src="https://storage.googleapis.com/a1aa/image/ChHwaHeK9fnqR0w83q5zXgefKavfRYvKJ12XfF58yug381neJA.jpg" width="40"/>
-         <div>
-          <h3 class="font-semibold">
-           Literasi Bahasa Indonesia
-          </h3>
-          <p class="text-gray-500 text-sm">
-           <i class="fas fa-video">
-           </i>
-           0/10 Video
-           <i class="fas fa-file-alt ml-4">
-           </i>
-           0/1 Dokumen
-          </p>
-         </div>
-        </div>
-        <i class="fas fa-chevron-right text-gray-400">
-        </i>
-       </div>
-       <div class="bg-white p-4 rounded-lg shadow flex items-center justify-between">
-        <div class="flex items-center">
-         <img alt="ENG icon" class="mr-4" height="40" src="https://storage.googleapis.com/a1aa/image/7a70URmmTU5bHlgQ7uEktEGXOS1wDFEdagWPV8i0zhF81neJA.jpg" width="40"/>
-         <div>
-          <h3 class="font-semibold">
-           Literasi Bahasa Inggris
-          </h3>
-          <p class="text-gray-500 text-sm">
-           <i class="fas fa-video">
-           </i>
-           0/10 Video
-           <i class="fas fa-file-alt ml-4">
-           </i>
-           0/1 Dokumen
-          </p>
-         </div>
-        </div>
-        <i class="fas fa-chevron-right text-gray-400">
-        </i>
-       </div>
-       <div class="bg-white p-4 rounded-lg shadow flex items-center justify-between">
-        <div class="flex items-center">
-         <img alt="Math icon" class="mr-4" height="40" src="https://storage.googleapis.com/a1aa/image/kaRMVeemyZtSzECN6zWBOhS1XsmLzlsJelXsA5oh4YWsvepPB.jpg" width="40"/>
-         <div>
-          <h3 class="font-semibold">
-           PENALARAN MATEMATIKA
-          </h3>
-          <p class="text-gray-500 text-sm">
-           <i class="fas fa-video">
-           </i>
-           0/12 Video
-           <i class="fas fa-file-alt ml-4">
-           </i>
-           0/1 Dokumen
-          </p>
-         </div>
-        </div>
-        <i class="fas fa-chevron-right text-gray-400">
-        </i>
-       </div>
-      </div>
-     </div>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>
+            Recommended Jobs
+        </title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    </head>
 
-     <html>
- <head>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
- </head>
- <body class="bg-gray-100 p-6">
-  <div class="bg-white p-6 rounded-lg shadow-md">
-   <div class="flex items-center mb-4">
-    <i class="fas fa-chart-line text-blue-500 text-2xl mr-2">
-    </i>
-    <h1 class="text-xl font-semibold text-blue-600">
-     Progress Belajar
-    </h1>
-   </div>
-   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div class="flex items-center">
-     <img alt="Brain and book icon" class="w-12 h-12 mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/ttSHEUf2bfhU3Eqz8iABsZLFa53LEk8RYWJqdVjhQCei2epPB.jpg" width="50"/>
-     <div class="flex-1">
-      <h2 class="text-blue-600 font-semibold">
-       Pengetahuan Umum (TPS)
-      </h2>
-      <div class="bg-gray-200 rounded-full h-4 mt-2">
-       <div class="bg-gray-400 h-4 rounded-full" style="width: 0%;">
-       </div>
-      </div>
-      <p class="text-gray-600 text-sm mt-1">
-       0.0%
-      </p>
-     </div>
-    </div>
-    <div class="flex items-center">
-     <img alt="Magnifying glass and book icon" class="w-12 h-12 mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/jNvhHeMzDFyRDKOMasVPsIMmcFIOIwKkY2GlUPZJjAHntP9JA.jpg" width="50"/>
-     <div class="flex-1">
-      <h2 class="text-blue-600 font-semibold">
-       Pemahaman Bacaan &amp; Menulis (PBM)
-      </h2>
-      <div class="bg-gray-200 rounded-full h-4 mt-2">
-       <div class="bg-gray-400 h-4 rounded-full" style="width: 0%;">
-       </div>
-      </div>
-      <p class="text-gray-600 text-sm mt-1">
-       0.0%
-      </p>
-     </div>
-    </div>
-    <div class="flex items-center">
-     <img alt="Document and checkmark icon" class="w-12 h-12 mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/akJnbw7AGnI3FFC3sjRmQFiMbiobzq3PXpNuVEs8p36z2neJA.jpg" width="50"/>
-     <div class="flex-1">
-      <h2 class="text-blue-600 font-semibold">
-       Pengetahuan dan Pemahaman Umum (PPU)
-      </h2>
-      <div class="bg-gray-200 rounded-full h-4 mt-2">
-       <div class="bg-gray-400 h-4 rounded-full" style="width: 0%;">
-       </div>
-      </div>
-      <p class="text-gray-600 text-sm mt-1">
-       0.0%
-      </p>
-     </div>
-    </div>
-    <div class="flex items-center">
-     <img alt="Book and triangle icon" class="w-12 h-12 mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/4LNsHj7LH3aeD6IApO01Yzbv8jRtAPiEvkNYbRAJcCNotP9JA.jpg" width="50"/>
-     <div class="flex-1">
-      <h2 class="text-blue-600 font-semibold">
-       Pengetahuan Kuantitatif (PK)
-      </h2>
-      <div class="bg-gray-200 rounded-full h-4 mt-2">
-       <div class="bg-gray-400 h-4 rounded-full" style="width: 0%;">
-       </div>
-      </div>
-      <p class="text-gray-600 text-sm mt-1">
-       0.0%
-      </p>
-     </div>
-    </div>
-    <div class="flex items-center">
-     <img alt="IDN speech bubble icon" class="w-12 h-12 mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/fPd0bUC52wycQyOLnhnQnh3eO2NbiQNPsACfVef2gb6Va7TfE.jpg" width="50"/>
-     <div class="flex-1">
-      <h2 class="text-blue-600 font-semibold">
-       Literasi Bahasa Indonesia
-      </h2>
-      <div class="bg-gray-200 rounded-full h-4 mt-2">
-       <div class="bg-gray-400 h-4 rounded-full" style="width: 0%;">
-       </div>
-      </div>
-      <p class="text-gray-600 text-sm mt-1">
-       0.0%
-      </p>
-     </div>
-    </div>
-    <div class="flex items-center">
-     <img alt="ENG speech bubble icon" class="w-12 h-12 mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/ZaHF8klDlDpvI1H9pQeToNtlRYDF4jqlmo0PBN7aPVoptP9JA.jpg" width="50"/>
-     <div class="flex-1">
-      <h2 class="text-blue-600 font-semibold">
-       Literasi Bahasa Inggris
-      </h2>
-      <div class="bg-gray-200 rounded-full h-4 mt-2">
-       <div class="bg-gray-400 h-4 rounded-full" style="width: 0%;">
-       </div>
-      </div>
-      <p class="text-gray-600 text-sm mt-1">
-       0.0%
-      </p>
-     </div>
-    </div>
-    <div class="flex items-center">
-     <img alt="Calculator and pencil icon" class="w-12 h-12 mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/7aaehDegQigzr0gqDEiabU3l5vlkR4oCckMae8VLietQt9pPB.jpg" width="50"/>
-     <div class="flex-1">
-      <h2 class="text-blue-600 font-semibold">
-       PENALARAN MATEMATIKA
-      </h2>
-      <div class="bg-gray-200 rounded-full h-4 mt-2">
-       <div class="bg-gray-400 h-4 rounded-full" style="width: 0%;">
-       </div>
-      </div>
-      <p class="text-gray-600 text-sm mt-1">
-       0.0%
-      </p>
-     </div>
-    </div>
-   </div>
-  </div>
- </body>
-</html>
-
-    </div>
-   </div>
-  </div>
- </body>
-</html>
+    <body class="bg-gray-100 p-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h1 class="text-2xl font-bold">
+                    Recommended jobs
+                </h1>
+                <div class="flex items-center space-x-2">
+                    <span class="bg-gray-200 text-gray-800 text-sm font-semibold px-2.5 py-0.5 rounded-full">
+                        386
+                    </span>
+                    <div class="flex items-center space-x-1 text-gray-500">
+                        <span>
+                            Sort by:
+                        </span>
+                        <span class="font-semibold">
+                            Last updated
+                        </span>
+                        <i class="fas fa-sliders-h">
+                        </i>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Job Card 1 -->
+                <div class="bg-white p-4 rounded-lg shadow-md flex flex-col justify-between card">
+                    <div class="bg-blue-50 p-4 rounded-lg mb-2 rectangle">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs text-gray-500">
+                                11 Apr, 2024
+                            </span>
+                            <i class="far fa-bookmark text-gray-500">
+                            </i>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <h2 class="text-lg font-bold">
+                                Twitter
+                            </h2>
+                            <img alt="Twitter logo" class="ml-2 w-6 h-6" height="24"
+                                src="https://storage.googleapis.com/a1aa/image/V7FEiu5YGuLeTqY8C08dVRABbgNxBg9eFwN8yClMbk03V17TA.jpg"
+                                width="24" />
+                        </div>
+                        <h3 class="text-base font-semibold mb-2">
+                            UX Designer
+                        </h3>
+                        <div class="flex flex-wrap gap-2 mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Full time
+                            </span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Middle level
+                            </span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Distant
+                            </span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Project work
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <div>
+                            <p class="text-sm text-gray-500 mb-2">
+                                IDR 7 jt/Bulan
+                            </p>
+                            <p class="text-sm text-gray-500 mb-2">
+                                Bali
+                            </p>
+                        </div>
+                        <button class="bg-black text-white text-sm font-semibold py-1 px-4 rounded">
+                            Apply
+                        </button>
+                    </div>
+                </div>
+                <!-- Job Card 2 -->
+                <div class="bg-white p-4 rounded-lg shadow-md flex flex-col justify-between card">
+                    <div class="bg-pink-50 p-4 rounded-lg mb-2 rectangle">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs text-gray-500">
+                                2 Apr, 2024
+                            </span>
+                            <i class="far fa-bookmark text-gray-500">
+                            </i>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <h2 class="text-lg font-bold">
+                                Airbnb
+                            </h2>
+                            <img alt="Airbnb logo" class="ml-2 w-6 h-6" height="24"
+                                src="https://storage.googleapis.com/a1aa/image/24TZiwlazH7tEhr9JUkHWwOjwPjhdksgdpPJCMeOKv08q69JA.jpg"
+                                width="24" />
+                        </div>
+                        <h3 class="text-base font-semibold mb-2">
+                            Graphic Designer
+                        </h3>
+                        <div class="flex flex-wrap gap-2 mb-2">
+                            <span class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Part time
+                            </span>
+                            <span class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Senior level
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <div>
+                            <p class="text-sm text-gray-500 mb-2">
+                                IDR 5 jt/Bulan
+                            </p>
+                            <p class="text-sm text-gray-500 mb-2">
+                                Surabaya
+                            </p>
+                        </div>
+                        <button class="bg-black text-white text-sm font-semibold py-1 px-4 rounded">
+                            Apply
+                        </button>
+                    </div>
+                </div>
+                <!-- Job Card 3 -->
+                <div class="bg-white p-4 rounded-lg shadow-md flex flex-col justify-between card">
+                    <div class="bg-green-50 p-4 rounded-lg mb-2 rectangle">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs text-gray-500">
+                                19 May, 2024
+                            </span>
+                            <i class="far fa-bookmark text-gray-500">
+                            </i>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <h2 class="text-lg font-bold">
+                                Whatsapp
+                            </h2>
+                            <img alt="Whatsapp logo" class="ml-2 w-6 h-6" height="24"
+                                src="https://storage.googleapis.com/a1aa/image/9Urrk5Ifr0WwVSgF4aelos7NoK3HL5tYS0rgQjUoiroerq3nA.jpg"
+                                width="24" />
+                        </div>
+                        <h3 class="text-base font-semibold mb-2">
+                            IT Security Administrator
+                        </h3>
+                        <div class="flex flex-wrap gap-2 mb-2">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Full time
+                            </span>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Senior level
+                            </span>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Flexible Schedule
+                            </span>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Project work
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <div>
+                            <p class="text-sm text-gray-500 mb-2">
+                                IDR 7 jt/Bulan
+                            </p>
+                            <p class="text-sm text-gray-500 mb-2">
+                                Yogyakarta
+                            </p>
+                        </div>
+                        <button class="bg-black text-white text-sm font-semibold py-1 px-4 rounded">
+                            Apply
+                        </button>
+                    </div>
+                </div>
+                <!-- Job Card 4 -->
+                <div class="bg-white p-4 rounded-lg shadow-md flex flex-col justify-between card">
+                    <div class="bg-gray-50 p-4 rounded-lg mb-2 rectangle">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs text-gray-500">
+                                18 Jan, 2024
+                            </span>
+                            <i class="far fa-bookmark text-gray-500">
+                            </i>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <h2 class="text-lg font-bold">
+                                Apple
+                            </h2>
+                            <img alt="Apple logo" class="ml-2 w-6 h-6" height="24"
+                                src="https://storage.googleapis.com/a1aa/image/mfdjQf9oO2rWIEmaEwqT0fRKtenyejctP0p3qE6IMeO3cV9eJA.jpg"
+                                width="24" />
+                        </div>
+                        <h3 class="text-base font-semibold mb-2">
+                            Graphic Designer
+                        </h3>
+                        <div class="flex flex-wrap gap-2 mb-2">
+                            <span class="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Part time
+                            </span>
+                            <span class="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Distant
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <div>
+                            <p class="text-sm text-gray-500 mb-2">
+                                IDR 9 jt/Bulan
+                            </p>
+                            <p class="text-sm text-gray-500 mb-2">
+                                Jakarta
+                            </p>
+                        </div>
+                        <button class="bg-black text-white text-sm font-semibold py-1 px-4 rounded">
+                            Apply
+                        </button>
+                    </div>
+                </div>
+                <!-- Job Card 5 -->
+                <div class="bg-white p-4 rounded-lg shadow-md flex flex-col justify-between card">
+                    <div class="bg-red-50 p-4 rounded-lg mb-2 rectangle">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs text-gray-500">
+                                15 Jun, 2024
+                            </span>
+                            <i class="far fa-bookmark text-gray-500">
+                            </i>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <h2 class="text-lg font-bold">
+                                YouTube
+                            </h2>
+                            <img alt="YouTube logo" class="ml-2 w-6 h-6" height="24"
+                                src="https://storage.googleapis.com/a1aa/image/flatQPJYzxS4PSVfPB7lgaWFP71QsD6GAyZJO5lKMLm7V17TA.jpg"
+                                width="24" />
+                        </div>
+                        <h3 class="text-base font-semibold mb-2">
+                            Senior UI/UX Designer
+                        </h3>
+                        <div class="flex flex-wrap gap-2 mb-2">
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Part time
+                            </span>
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Senior level
+                            </span>
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Project work
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <div>
+                            <p class="text-sm text-gray-500 mb-2">
+                                IDR 8 jt/Bulan
+                            </p>
+                            <p class="text-sm text-gray-500 mb-2">
+                                Jakarta
+                            </p>
+                        </div>
+                        <button class="bg-black text-white text-sm font-semibold py-1 px-4 rounded">
+                            Apply
+                        </button>
+                    </div>
+                </div>
+                <!-- Job Card 6 -->
+                <div class="bg-white p-4 rounded-lg shadow-md flex flex-col justify-between card">
+                    <div class="bg-green-50 p-4 rounded-lg mb-2 rectangle">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs text-gray-500">
+                                4 Feb, 2024
+                            </span>
+                            <i class="far fa-bookmark text-gray-500">
+                            </i>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <h2 class="text-lg font-bold">
+                                Google
+                            </h2>
+                            <img alt="Google logo" class="ml-2 w-6 h-6" height="24"
+                                src="https://storage.googleapis.com/a1aa/image/It8QsjFWPEqdDlX6e0AlCdNweqPBFVnPyYewuNfHer8juqeeJA.jpg"
+                                width="24" />
+                        </div>
+                        <h3 class="text-base font-semibold mb-2">
+                            Junior UI/UX Designer
+                        </h3>
+                        <div class="flex flex-wrap gap-2 mb-2">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Full time
+                            </span>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Junior level
+                            </span>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Distant
+                            </span>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Project work
+                            </span>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Flexible Schedule
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <div>
+                            <p class="text-sm text-gray-500 mb-2">
+                                IDR 9 jt/Bulan
+                            </p>
+                            <p class="text-sm text-gray-500 mb-2">
+                                Jakarta
+                            </p>
+                        </div>
+                        <button class="bg-black text-white text-sm font-semibold py-1 px-4 rounded">
+                            Apply
+                        </button>
+                    </div>
+                </div>
+                <!-- Job Card 7 -->
+                <div class="bg-white p-4 rounded-lg shadow-md flex flex-col justify-between card">
+                    <div class="bg-orange-50 p-4 rounded-lg mb-2 rectangle">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs text-gray-500">
+                                20 May, 2024
+                            </span>
+                            <i class="far fa-bookmark text-gray-500">
+                            </i>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <h2 class="text-lg font-bold">
+                                Amazon
+                            </h2>
+                            <img alt="Amazon logo" class="ml-2 w-6 h-6" height="24"
+                                src="https://storage.googleapis.com/a1aa/image/Mcx8l6UzYUJJBVlTO5ceeOfNQFLGgWlQh635wmlqwOwqrq3nA.jpg"
+                                width="24" />
+                        </div>
+                        <h3 class="text-base font-semibold mb-2">
+                            Senior UI/UX Designer
+                        </h3>
+                        <div class="flex flex-wrap gap-2 mb-2">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Part time
+                            </span>
+                            <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Senior level
+                            </span>
+                            <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Distant
+                            </span>
+                            <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+                                Project work
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mt-auto">
+                        <div>
+                            <p class="text-sm text-gray-500 mb-2">
+                                IDR 7 jt/Bulan
+                            </p>
+                            <p class="text-sm text-gray-500 mb-2">
+                                Surabaya
+                            </p>
+                        </div>
+                        <button class="bg-black text-white text-sm font-semibold py-1 px-4 rounded">
+                            Apply
+                        </button>
+                    </div>
+                </div>
+                <!-- Job Card 8 -->
+               
+          </div>
+         </div>
+        </body>
+       </html>
 @endsection
