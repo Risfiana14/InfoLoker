@@ -4,79 +4,66 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    public function login(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->intended('dashboard');
-        }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
-    }
-    public function indexlogin()
+    // Tampilkan halaman login
+    public function indexLogin()
     {
         return view('login');
     }
 
-    public function indexregister()
+    // Proses login
+    public function login(Request $request)
     {
-        return view('register.register');
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $user = DB::table('users')->where('email', $request->email)->first();
+
+        if ($user && Hash::check($request->password, $user->password)) {
+            Auth::loginUsingId($user->id); // Login user
+
+            return redirect()->route('dashboard'); // Redirect ke dashboard
+        }
+
+        return back()->withErrors(['email' => 'Invalid email or password.']);
     }
+
+    // Tampilkan halaman register
+    public function indexRegister()
+    {
+        return view('register');
+    }
+
+    // Proses register
     public function register(Request $request)
     {
         $request->validate([
-            'username' => 'required',
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required',
-            'no_hp' => 'required',
-            'wa' => 'required',
-            'pin' => 'required',
-            'ID_JENIS_USER' => 'required|exists:JENIS_USER,ID_JENIS_USER'
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|string|min:8|confirmed',
         ]);
-        
-        // Membuat pengguna baru
-        $user = User::create([
-            'username' => $request->username,
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'no_hp' => $request->no_hp,
-            'wa' => $request->wa,
-            'pin' => $request->pin,
-            'ID_JENIS_USER' => $request->ID_JENIS_USER
+
+        DB::insert('INSERT INTO users (name, email, password, created_at, updated_at) VALUES (?, ?, ?, ?, ?)', [
+            $request->name,
+            $request->email,
+            Hash::make($request->password),
+            now(),
+            now(),
         ]);
-    
-        Auth::login($user);
-        Auth::user();
-    
-        if ($user->save()) {
-            // Mengambil nama JENIS_USER berdasarkan ID_JENIS_USER
-            $jenisUser = DB::table('JENIS_USER')->where('ID_JENIS_USER', $user->ID_JENIS_USER)->value('jenis_user');
-            
-            // Menyimpan nama JENIS_USER ke dalam session
-            session(['JENIS_USER' => $jenisUser]);
 
-            return redirect()->route('login');
-        }
-
+        return redirect()->route('login')->with('success', 'Registration successful! Please login.');
     }
 
+    // Logout
     public function logout()
     {
         Auth::logout();
         return redirect()->route('login');
     }
 }
-
