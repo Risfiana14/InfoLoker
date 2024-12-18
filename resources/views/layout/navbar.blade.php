@@ -341,9 +341,9 @@ class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bo
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Account Setting</a>
             <div class="dropdown-divider"></div>
-            <form action="{{ route('Logout.user')}}" method="POST">
+            {{-- <form action="{{ route('Logout.user')}}" method="POST"> --}}
+            <a class="dropdown-item" href="{{ route('logout')}}">Logout</a>
               @csrf
-            {{-- <a class="dropdown-item" href="{{ route('logout')}}">Logout</a> --}}
             <button class="dropdown-item" type="submit">
               Logout
             </button>

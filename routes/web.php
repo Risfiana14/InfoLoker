@@ -12,9 +12,9 @@ use App\Http\Controllers\AuthController;
 Route::get('/', function () {
     return view('layout.main');
 });
-Route::get('/', function () {
-    return view('dashboard');
-});
+// Route::get('/', function () {
+//     return view('dashboard');
+// });
 
 // LOWONGAN
 Route::get('/lowongan', [LowonganController::class, 'index'])->name('lowongan.index');
