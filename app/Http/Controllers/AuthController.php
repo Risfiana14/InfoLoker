@@ -2,14 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-class LoginController extends Controller
+
+class AuthController extends Controller
 {
+    public function login(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('dashboard');
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
+    }
     public function indexlogin()
     {
         return view('login');
@@ -19,24 +33,6 @@ class LoginController extends Controller
     {
         return view('register.register');
     }
-
-    public function login(Request $request)
-    {
-        $credentials = $request->validate([
-            'email' => ['required', 'string','email'],
-            'password' => ['required', 'string'],
-        ]);  
-        Log::info('Mencoba login dengan email: '.$request->email);
-
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended(route('dashboard')); 
-        }
-        Log::warning('Login gagal untuk email: '.$request->email);  // Log saat login gagal
-        return back()->withErrors([
-            'email' => 'Kombinasi email dan password tidak cocok.',
-        ]);
-    }
-
     public function register(Request $request)
     {
         $request->validate([
@@ -63,6 +59,7 @@ class LoginController extends Controller
         ]);
     
         Auth::login($user);
+        Auth::user();
     
         if ($user->save()) {
             // Mengambil nama JENIS_USER berdasarkan ID_JENIS_USER
@@ -82,3 +79,4 @@ class LoginController extends Controller
         return redirect()->route('login');
     }
 }
+
