@@ -88,7 +88,11 @@
                   <ul class="nav nav-collapse">
                     <li>
 <<<<<<< HEAD
+<<<<<<< HEAD
                       <a href="{{ route('dashboard')}}">
+=======
+                      <a href="{{route('dashboard')}}">
+>>>>>>> db906b5e9dad29d3432dde5b66051fcc50de1cba
 =======
                       <a href="{{route('dashboard')}}">
 >>>>>>> db906b5e9dad29d3432dde5b66051fcc50de1cba
@@ -702,7 +706,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Account Setting</a>
                         <div class="dropdown-divider"></div>
-                        <form action="{{ route('Logout.user')}}" method="POST">
+                        <form action="{{ route('logout')}}" method="POST">
                           @csrf
                         {{-- <a class="dropdown-item" href="{{ route('logout')}}">Logout</a> --}}
                         <button class="dropdown-item" type="submit">
