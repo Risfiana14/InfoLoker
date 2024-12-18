@@ -194,10 +194,9 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#tables">
-                  <i class="fas fa-table"></i>
-                  <p>Tables</p>
-                  <span class="caret"></span>
+                <a href="/role">
+                  <i class="fas fa-desktop"></i>
+                  <p>Role</p>
                 </a>
                 <div class="collapse" id="tables">
                   <ul class="nav nav-collapse">
@@ -672,7 +671,11 @@
                           Kenzie
                         @endif
                       </span>
+<<<<<<< HEAD
                     </span>                    
+=======
+                    </span>
+>>>>>>> b443757fed070fe26031f61effbd989595a74d5f
                   </a>
                   <ul class="dropdown-menu dropdown-user animated fadeIn">
                     <div class="dropdown-user-scroll scrollbar-outer">
@@ -704,9 +707,9 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Account Setting</a>
                         <div class="dropdown-divider"></div>
-                        <form action="{{ route('Logout.user')}}" method="POST">
+                        {{-- <form action="{{ route('Logout.user')}}" method="POST"> --}}
+                            <a class="dropdown-item" href="{{ route('logout')}}">Logout</a>
                           @csrf
-                        {{-- <a class="dropdown-item" href="{{ route('logout')}}">Logout</a> --}}
                         <button class="dropdown-item" type="submit">
                           Logout
                         </button>
@@ -724,8 +727,7 @@
         <div class="container">
           <div class="page-inner">
             <div
-              class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
-            >
+              class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
               <div>
                 <h3 class="fw-bold mb-3">Dashboard</h3>
                 <h6 class="op-7 mb-2">Free Bootstrap 5 Admin Dashboard</h6>
