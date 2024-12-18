@@ -13,13 +13,12 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable(false);  // Menambahkan NOT NULL pada kolom name
-            $table->string('username')->nullable(false);
-            $table->string('email');
-            $table->string('password')->unique();
+            $table->string('name');  // Menambahkan NOT NULL pada kolom name
+            $table->string('email')->unique();
+            $table->string('password');
             $table->timestamps();
         });
-    }      
+    }
     /**
      * Reverse the migrations.
      */
