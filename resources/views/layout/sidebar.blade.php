@@ -24,7 +24,7 @@
       </div>
       <!-- End Logo Header -->
     </div>
-    {{-- <li class="nav-item topbar-user dropdown hidden-caret">
+    <li class="nav-item topbar-user dropdown hidden-caret">
         <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#"
             aria-expanded="false">
             <div class="avatar-sm">
@@ -63,20 +63,22 @@
                 </li>
             </div>
         </ul>
-    </li> --}}
+    </li>
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
       <div class="sidebar-content">
         <ul class="nav nav-secondary">
-            {{-- <li class="nav-item">
-                <a href="{{ route('asep') }}">
-                  <i class="fas fa-desktop"></i>
-                  <p>Profile</p>
+
+            <li class="nav-item">
+                <a href="{{ route('dashboard') }}">
+                  <i class="fas fa-home"></i>
+                  <p>Dashboard</p>
                 </a>
-              </li> --}}
-          <li class="nav-item active">
+              </li>
+
+          {{-- <li class="nav-item active">
             <a
               data-bs-toggle="collapse"
-              href="#dashboard"
+              href="{{ route('dashboard') }}"
               class="collapsed"
               aria-expanded="false">
               <i class="fas fa-home"></i>
@@ -84,7 +86,7 @@
               <span class="caret"></span>
             </a>
             <div class="collapse" id="dashboard">
-              <ul class="nav nav-collapse">
+            <ul class="nav nav-collapse">
                 <li>
                   <a href="../demo1/index.html">
                     <span class="sub-item">Dashboard 1</span>
@@ -92,10 +94,10 @@
                 </li>
               </ul>
             </div>
-          </li>
+          </li> --}}
 
           <li class="nav-item">
-            <a href="{{ route('lamongan') }}">
+            <a href="{{ route('lowongan') }}">
               <i class="fas fa-desktop"></i>
               <p>Lowongan Pekerjaan</p>
             </a>

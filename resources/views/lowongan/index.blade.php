@@ -79,7 +79,7 @@
                                 Bali
                             </p>
                         </div>
-                        <a href="/lowongan/lamar"> <!-- MASALAH BESAR PADA HREF TIDAK BISA MELLIHAT ROUTE -->
+                        <a href="{{ route('lowongan.lamar') }}"> <!-- MASALAH BESAR PADA HREF TIDAK BISA MELLIHAT ROUTE -->
                             <button class="bg-black text-white text-sm font-semibold py-1 px-4 rounded">
                                 Apply
                             </button>

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\LowonganController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LamaranController;
 use App\Http\Controllers\ProfileController;
 
 // MIDLEWARE
@@ -17,27 +18,19 @@ Route::middleware(['web', 'guest'])->group(function () {
 });
 
 Route::middleware(['web', 'auth'])->group(function () {
-    Route::get('/', function () {
-        return view('layout.main');
-    });
+    // Dashboard
+    Route::get('/dashboard', [dashboard::class, 'index'])->name('dashboard');
+    
     // Logout
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
     // PROFILE
-    // Route::get('/profile', [ProfileController::class, 'index'])->name('asep');
-    // Route::get('/profile', function () {
-    //     return view('profile.index');
-    // });
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 
     // LOWONGAN
-    Route::get('/lowongan', [LowonganController::class, 'index'])->name('lamongan');
-    // Route::post('/lowongan/lamaran', [LowonganController::class, 'lamar'])->name('lowongan.lamar');
-    //     Route::post('/lowongan/lamaran', function () {
-    //     return view('lowongan.lamar');
-    // });
-
-    // Dashboard
-    Route::get('/dashboard', [dashboard::class, 'index'])->name('dashboard');
+    Route::get('/lowongan', [LowonganController::class, 'index'])->name('lowongan');
+    Route::get('/lowongan/lamaran', [LowonganController::class, 'lamar'])->name('lowongan.lamar');
+    Route::post('kirim-lamaran', [LamaranController::class, 'store'])->name('kirim.lamaran');
 
     // Roles
     Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.create');
@@ -47,4 +40,8 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::put('/roles/{role}', [RoleController::class, 'update'])->name('roles.update');
     Route::delete('/roles/{role}', [RoleController::class, 'destroy'])->name('roles.destroy');
 
+    //ORIAN
+    Route::get('/orian', function () {
+        return view('dashboard');
+    });
 });
