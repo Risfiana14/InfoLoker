@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Edit Role</h1>
-    <form action="{{ route('roles.update', $role->id) }}" method="POST">
+    <form action="{{ route('role.update', $role->id) }}" method="POST">
         @csrf
         @method('PUT')
         <label>Name:</label>

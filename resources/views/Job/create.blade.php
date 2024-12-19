@@ -3,11 +3,15 @@
 @section('content')
 <h1>Create Job</h1>
 
-<form action="{{ route('jobs.store') }}" method="POST" class="job-form">
+<form action="{{ route('job.store') }}" method="POST" class="job-form">
     @csrf
     <table class="form-table">
         <tr>
-            <td><label for="title">Title</label></td>
+            <td><label for="title">No</label></td>
+            <td><input type="text" name="title" id="title" required></td>
+        </tr>
+        <tr>
+            <td><label for="title">Job Title</label></td>
             <td><input type="text" name="title" id="title" required></td>
         </tr>
         <tr>

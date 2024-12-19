@@ -12,7 +12,7 @@
         @endif
 
         <!-- Button Tambah Role -->
-        <a href="{{ route('roles.create') }}" class="btn btn-primary mb-3">Add New Role</a>
+        <a href="{{ route('role.create') }}" class="btn btn-primary mb-3">Add New Role</a>
 
         <!-- Tabel Daftar Role -->
         <table class="table table-bordered">
@@ -30,10 +30,10 @@
                         <td>{{ $role->name }}</td>
                         <td>
                             <!-- Edit Role -->
-                            <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="{{ route('role.edit', $role->id) }}" class="btn btn-warning btn-sm">Edit</a>
 
                             <!-- Delete Role -->
-                            <form action="{{ route('roles.destroy', $role->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this role?');">
+                            <form action="{{ route('role.destroy', $role->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this role?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>

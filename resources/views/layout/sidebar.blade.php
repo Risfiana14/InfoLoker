@@ -176,6 +176,12 @@
             </div>
           </li>
           <li class="nav-item">
+            <a href="{{ route('job.index') }}">
+              <i class="fas fa-desktop"></i>
+              <p>Job</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a data-bs-toggle="collapse" href="#maps">
               <i class="fas fa-map-marker-alt"></i>
               <p>Maps</p>
@@ -217,12 +223,7 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item">
-            <a href="{{ route('jobs.index') }}">
-              <i class="fas fa-desktop"></i>
-              <p>Job</p>
-            </a>
-          </li>
+          
           <li class="nav-item">
             <a href="../../documentation/index.html">
               <i class="fas fa-file"></i>

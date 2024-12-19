@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Roles</h1>
-    <a href="{{ route('roles.create') }}">Create Role</a>
+    <a href="{{ route('role.create') }}">Create Role</a>
     <table>
         <tr>
             <th>ID</th>
@@ -14,8 +14,8 @@
             <td>{{ $role->id }}</td>
             <td>{{ $role->name }}</td>
             <td>
-                <a href="{{ route('roles.edit', $role->id) }}">Edit</a>
-                <form action="{{ route('roles.destroy', $role->id) }}" method="POST" style="display:inline;">
+                <a href="{{ route('role.edit', $role->id) }}">Edit</a>
+                <form action="{{ route('role.destroy', $role->id) }}" method="POST" style="display:inline;">
                     @csrf
                     @method('DELETE')
                     <button type="submit">Delete</button>

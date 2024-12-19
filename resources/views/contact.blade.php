@@ -27,7 +27,7 @@
 
     {{-- Formulir Kontak --}}
     <h2>Send Us a Message:</h2>
-    <form action="{{ route('contact.submit') }}" method="POST">
+    <form action="{{ route('contact.contact') }}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Your Name</label>

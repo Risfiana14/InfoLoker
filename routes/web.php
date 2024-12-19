@@ -30,19 +30,26 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::get('/dashboard', [dashboard::class, 'index'])->name('dashboard');
 
     // Roles
-    Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.create');
-    Route::post('/roles', [RoleController::class, 'store'])->name('roles.store');
-    Route::get('/roles', [RoleController::class, 'index'])->name('roles.index');
-    Route::get('/roles/{role}/edit', [RoleController::class, 'edit'])->name('roles.edit');
-    Route::put('/roles/{role}', [RoleController::class, 'update'])->name('roles.update');
-    Route::delete('/roles/{role}', [RoleController::class, 'destroy'])->name('roles.destroy');
+    
 
 });
+
+Route::apiResource('role', RoleController::class);
 
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
-Route::get('/jobs/create', [JobController::class, 'create'])->name('jobs.create');
-Route::post('/jobs', [JobController::class, 'store'])->name('jobs.store');
+Route::get('/jobs', [JobController::class, 'index'])->name('job.index');
+Route::get('/jobs/create', [JobController::class, 'create'])->name('job.create');
+Route::post('/jobs', [JobController::class, 'store'])->name('job.store');
+Route::put('/job/{id}', [JobController::class, 'update'])->name('job.update');  
+Route::get('/job/{id}/edit', [JobController::class, 'edit'])->name('job.edit');
+Route::delete('/job/{id}', [JobController::class, 'destroy'])->name('job.destroy');
+
+
+
+
+
+
+
