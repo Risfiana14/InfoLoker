@@ -41,7 +41,7 @@
             <div class="collapse" id="dashboard">
               <ul class="nav nav-collapse">
                 <li>
-                  <a href="../demo1/index.html">
+                  <a href="">
                     <span class="sub-item">Dashboard 1</span>
                   </a>
                 </li>
@@ -53,6 +53,13 @@
             <a href="{{ route('lowongan.index') }}">
               <i class="fas fa-desktop"></i>
               <p>Lowongan Pekerjaan</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ route('pelatihan.index') }}">
+              <i class="fas fa-desktop"></i>
+              <p>Pelatihan</p>
             </a>
           </li>
 

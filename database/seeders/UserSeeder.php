@@ -16,17 +16,9 @@ class UserSeeder extends Seeder
     {
         // Insert Admin User
         DB::table('users')->insert([
-            'id_user' => Str::uuid(),
-            'nama_user' => 'Admin User',
-            'username' => 'admin',
-            'password' => Hash::make('password123'), // Password hash
+            'name' => 'Admin User',
             'email' => 'admin@example.com',
-            'no_hp' => '081234567890',
-            'wa' => '081234567890',
-            'pin' => '1234',
-            'id_jenis_user' => '1', // ID jenis user admin
-            'status_user' => 'active',
-            'delete_mark' => false,
+            'password' => Hash::make('password123'), // Password hash
             'created_at' => now(),
             'updated_at' => now(),
         ]);
