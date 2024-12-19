@@ -344,9 +344,6 @@ class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bo
             {{-- <form action="{{ route('Logout.user')}}" method="POST"> --}}
             <a class="dropdown-item" href="{{ route('logout')}}">Logout</a>
               @csrf
-            <button class="dropdown-item" type="submit">
-              Logout
-            </button>
             </form>
           </li>
         </div>

@@ -62,6 +62,12 @@
               <p>Pelatihan</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('pelatihan.index') }}">
+              <i class="fas fa-desktop"></i>
+              <p>Tanggalan</p>
+            </a>
+          </li>
 
           <li class="nav-section">
             <span class="sidebar-mini-icon">
