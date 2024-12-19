@@ -20,7 +20,7 @@ Route::middleware(['web', 'guest'])->group(function () {
 Route::middleware(['web', 'auth'])->group(function () {
     // Dashboard
     Route::get('/dashboard', [dashboard::class, 'index'])->name('dashboard');
-    
+
     // Logout
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -29,7 +29,9 @@ Route::middleware(['web', 'auth'])->group(function () {
 
     // LOWONGAN
     Route::get('/lowongan', [LowonganController::class, 'index'])->name('lowongan');
-    Route::get('/lowongan/lamaran', [LowonganController::class, 'lamar'])->name('lowongan.lamar');
+    // Route::get('/lowongan/lamaran', [LowonganController::class, 'lamar'])->name('lowongan.lamar');
+    Route::get('/lowongan/{id}/lamar', [LowonganController::class, 'lamar'])->name('lowongan.lamar');
+
     Route::post('kirim-lamaran', [LamaranController::class, 'store'])->name('kirim.lamaran');
 
     // Roles
