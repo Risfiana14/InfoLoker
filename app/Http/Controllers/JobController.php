@@ -2,37 +2,35 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Job;
+use Illuminate\Http\Request;
 
 class JobController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $query = Job::query();
+        $jobs = Job::all(); // Menampilkan semua data
+        return view('job.index', compact('jobs'));
+    }
 
-        // Filter berdasarkan judul
-        if ($request->filled('title')) {
-            $query->where('title', 'like', '%' . $request->title . '%');
-        }
+    public function create()
+    {
+        return view('job.create'); // Form untuk membuat data baru
+    }
 
-        // Filter berdasarkan lokasi
-        if ($request->filled('location')) {
-            $query->where('location', $request->location);
-        }
+    public function store(Request $request)
+    {
+        // Validasi data
+        // $request->validate([
+        //     'title' => 'required|string|max:255',
+        //     'location' => 'required|string|max:255',
+        //     'category' => 'required|string|max:255',
+        //     'salary' => 'required|numeric',
+        // ]);
 
-        // Filter berdasarkan kategori
-        if ($request->filled('category')) {
-            $query->where('category', $request->category);
-        }
+        // Simpan ke database
+        Job::create($request->all());
 
-        // Filter berdasarkan gaji (range)
-        if ($request->filled('min_salary') && $request->filled('max_salary')) {
-            $query->whereBetween('salary', [$request->min_salary, $request->max_salary]);
-        }
-
-        $jobs = $query->paginate(10);
-
-        return view('jobs.index', compact('jobs'));
+        return redirect()->route('jobs.index')->with('success', 'Job created successfully.');
     }
 }

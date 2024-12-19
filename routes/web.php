@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\LowonganController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\JobController;
 
 // MIDLEWARE
 Route::middleware(['web', 'guest'])->group(function () {
@@ -42,4 +43,6 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/job', [JobController::class, 'index'])->name('job.index');
+Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
+Route::get('/jobs/create', [JobController::class, 'create'])->name('jobs.create');
+Route::post('/jobs', [JobController::class, 'store'])->name('jobs.store');

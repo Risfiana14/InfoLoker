@@ -256,10 +256,9 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a href="widgets.html">
+                <a href="{{ route('jobs.index') }}">
                   <i class="fas fa-desktop"></i>
-                  <p>Widgets</p>
-                  <span class="badge badge-success">4</span>
+                  <p>Job</p>
                 </a>
               </li>
               <li class="nav-item">
