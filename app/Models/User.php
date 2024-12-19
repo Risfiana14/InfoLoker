@@ -29,12 +29,34 @@ class User extends Authenticatable
     protected $primaryKey = 'id';
     public $timestamps = false;
 
+    // protected $fillable = [
+    //     'username',
+    //     'password',
+    //     'no_hp',
+    //     'alamat',
+    // ];
     protected $fillable = [
-        'username',
-        'password',
+        'no_ktp',
+        'no_kk',
+        'nama_lengkap',
+        'tanggal_lahir',
+        'tempat_lahir',
+        'provinsi',
+        'pendidikan',
+        'nama_sekolah',
+        'tahun_lulus',
+        'no_ijazah',
+        'tanggal_ijazah',
+        'nilai_rata_rata',
+        'jenis_kelamin',
+        'agama',
+        'status_perkawinan',
+        'tinggi_badan',
+        'Alamat',
         'no_hp',
-        'alamat',
+        'image',
     ];
+
     // protected $fillable = [
     //     'id_user',
     //     'nama_user',

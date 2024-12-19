@@ -1,4 +1,4 @@
-<div class="sidebar" data-background-color="dark">
+{{-- <div class="sidebar" data-background-color="dark">
     <div class="sidebar-logo">
       <!-- Logo Header -->
       <div class="logo-header" data-background-color="dark">
@@ -50,7 +50,7 @@
                 </li>
                 <li>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/profile">My Profile</a>
+                    <a class="dropdown-item" href="{{ route('profile') }}">My Profile</a>
                     <a class="dropdown-item" href="#">Inbox</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
@@ -70,26 +70,7 @@
                 </a>
               </li>
 
-          {{-- <li class="nav-item active">
-            <a
-              data-bs-toggle="collapse"
-              href="{{ route('dashboard') }}"
-              class="collapsed"
-              aria-expanded="false">
-              <i class="fas fa-home"></i>
-              <p>Dashboard</p>
-              <span class="caret"></span>
-            </a>
-            <div class="collapse" id="dashboard">
-            <ul class="nav nav-collapse">
-                <li>
-                  <a href="../demo1/index.html">
-                    <span class="sub-item">Dashboard 1</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li> --}}
+
 
           <li class="nav-item">
             <a href="{{ route('lowongan') }}">
@@ -327,4 +308,199 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div> --}}
+
+{{-- perbatasan --}}
+
+  {{-- <div class="sidebar" data-background-color="dark">
+    <div class="sidebar-logo">
+        <!-- Logo Header -->
+        <div class="logo-header" data-background-color="dark">
+            <a href="index.html" class="logo">
+                <img src="assets/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand" height="20"/>
+            </a>
+            <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                    <i class="gg-menu-right"></i>
+                </button>
+                <button class="btn btn-toggle sidenav-toggler">
+                    <i class="gg-menu-left"></i>
+                </button>
+            </div>
+            <button class="topbar-toggler more">
+                <i class="gg-more-vertical-alt"></i>
+            </button>
+        </div>
+        <!-- End Logo Header -->
+    </div>
+
+    <!-- User Profile Section -->
+    <li class="nav-item topbar-user dropdown hidden-caret">
+        <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+            <div class="avatar-sm">
+                <img src="assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
+            </div>
+            <span class="profile-username">
+                <span class="op-7">Hi,</span>
+                <span class="fw-bold">{{ $user->nama_lengkap }}</span>
+            </span>
+        </a>
+        <ul class="dropdown-menu dropdown-user animated fadeIn">
+            <div class="dropdown-user-scroll scrollbar-outer">
+                <li>
+                    <div class="user-box">
+                        <div class="avatar-lg">
+                            <img src="assets/img/profile.jpg" alt="image profile" class="avatar-img rounded" />
+                        </div>
+                        <div class="u-text">
+                            <h4>{{ $user->nama_lengkap }}</h4>
+                            <p class="text-muted">{{ $user->email }}</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ route('profile') }}">My Profile</a>
+                    <a class="dropdown-item" href="#">Inbox</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+                    @csrf
+                </li>
+            </div>
+        </ul>
+    </li>
+
+    <!-- Sidebar Content -->
+    <div class="sidebar-wrapper scrollbar scrollbar-inner">
+        <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+                <li class="nav-item">
+                    <a href="{{ route('dashboard') }}">
+                        <i class="fas fa-home"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+
+                <!-- Conditional Display based on role -->
+                @if($user->role == 2) <!-- Role = 2, User is employer -->
+                    <li class="nav-item">
+                        <a href="cards">
+                            <i class="fas fa-plus-circle"></i>
+                            <p>Tambahkan Lowongan</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('lowongan.lamar') }}">
+                            <i class="fas fa-eye"></i>
+                            <p>Lihat Lamaran</p>
+                        </a>
+                    </li>
+                @elseif($user->role == 1) <!-- Role = 1, User is regular -->
+                    <li class="nav-item">
+                        <a href="{{ route('lowongan') }}">
+                            <i class="fas fa-desktop"></i>
+                            <p>Lowongan Pekerjaan</p>
+                        </a>
+                    </li>
+                @endif
+            </ul>
+        </div>
+    </div>
+</div> --}}
+
+
+<div class="sidebar" data-background-color="dark">
+    <div class="sidebar-logo">
+        <!-- Logo Header -->
+        <div class="logo-header" data-background-color="dark">
+            <a href="index.html" class="logo">
+                <img src="assets/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand" height="20"/>
+            </a>
+            <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                    <i class="gg-menu-right"></i>
+                </button>
+                <button class="btn btn-toggle sidenav-toggler">
+                    <i class="gg-menu-left"></i>
+                </button>
+            </div>
+            <button class="topbar-toggler more">
+                <i class="gg-more-vertical-alt"></i>
+            </button>
+        </div>
+        <!-- End Logo Header -->
+    </div>
+
+    <!-- User Profile Section -->
+    <li class="nav-item topbar-user dropdown hidden-caret">
+        <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+            <div class="avatar-sm">
+                <img src="assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
+            </div>
+            <span class="profile-username">
+                <span class="op-7">Hi,</span>
+                <span class="fw-bold">{{ auth()->user()->nama_lengkap }}</span>
+            </span>
+        </a>
+        <ul class="dropdown-menu dropdown-user animated fadeIn">
+            <div class="dropdown-user-scroll scrollbar-outer">
+                <li>
+                    <div class="user-box">
+                        <div class="avatar-lg">
+                            <img src="assets/img/profile.jpg" alt="image profile" class="avatar-img rounded" />
+                        </div>
+                        <div class="u-text">
+                            <h4>{{ auth()->user()->nama_lengkap }}</h4>
+                            <p class="text-muted">{{ auth()->user()->email }}</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ route('profile') }}">My Profile</a>
+                    <a class="dropdown-item" href="#">Inbox</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+                    @csrf
+                </li>
+            </div>
+        </ul>
+    </li>
+
+    <!-- Sidebar Content -->
+    <div class="sidebar-wrapper scrollbar scrollbar-inner">
+        <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+                <li class="nav-item">
+                    <a href="{{ route('dashboard') }}">
+                        <i class="fas fa-home"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+
+                <!-- Conditional Display based on role -->
+                @if(auth()->user()->role == 2) <!-- Role = 2, User is employer -->
+                    <li class="nav-item">
+                        <a href="{{ route('cards.index') }}">
+                            <i class="fas fa-plus-circle"></i>
+                            <p>Tambahkan Lowongan</p>
+                        </a>
+                    </li>
+                    {{-- <li class="nav-item">
+                        <a href="{{ route('lowongan.lamar') }}">
+                            <i class="fas fa-eye"></i>
+                            <p>Lihat Lamaran</p>
+                        </a>
+                    </li> --}}
+                @elseif(auth()->user()->role == 1) <!-- Role = 1, User is regular -->
+                    <li class="nav-item">
+                        <a href="{{ route('lowongan') }}">
+                            <i class="fas fa-desktop"></i>
+                            <p>Lowongan Pekerjaan</p>
+                        </a>
+                    </li>
+                @endif
+            </ul>
+        </div>
+    </div>
+</div>

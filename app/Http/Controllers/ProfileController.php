@@ -99,3 +99,119 @@ class ProfileController extends Controller
         return redirect()->route('user.index')->with('success', 'User berhasil dihapus.');
     }
 }
+
+// namespace App\Http\Controllers;
+
+// use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Auth;
+
+// class ProfileController extends Controller
+// {
+//     public function index()
+//     {
+//         $user = Auth::user();
+
+//         if (
+//             !$user->no_ktp || !$user->no_kk || !$user->nama_lengkap || !$user->tanggal_lahir ||
+//             !$user->tempat_lahir || !$user->provinsi || !$user->pendidikan || !$user->nama_sekolah ||
+//             !$user->tahun_lulus || !$user->no_ijazah || !$user->tanggal_ijazah || !$user->nilai_rata_rata ||
+//             !$user->jenis_kelamin || !$user->agama || !$user->status_perkawinan || !$user->tinggi_badan ||
+//             !$user->Alamat || !$user->no_hp || !$user->image
+//         ) {
+//             return redirect()->route('isiformulir')->with('error', 'Lengkapi data Anda terlebih dahulu.');
+//         }
+
+//         return view('profile.myprofile', compact('user'));
+//     }
+
+//     public function create()
+//     {
+//         return view('profile.isiformulir');
+//     }
+
+//     public function store(Request $request)
+// {
+//     $request->validate([
+//         'no_ktp' => 'required|string',
+//         'no_kk' => 'required|string',
+//         'nama_lengkap' => 'required|string',
+//         'tanggal_lahir' => 'required|date',
+//         'tempat_lahir' => 'required|string',
+//         'provinsi' => 'required|string',
+//         'pendidikan' => 'required|string',
+//         'nama_sekolah' => 'required|string',
+//         'tahun_lulus' => 'required|digits:4',
+//         'no_ijazah' => 'required|string',
+//         'tanggal_ijazah' => 'required|date',
+//         'nilai_rata_rata' => 'required|numeric',
+//         'jenis_kelamin' => 'required|string',
+//         'agama' => 'required|string',
+//         'status_perkawinan' => 'required|string',
+//         'tinggi_badan' => 'required|integer',
+//         'Alamat' => 'required|string',
+//         'no_hp' => 'required|string',
+//         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+//     ]);
+
+//     $user = Auth::user();
+
+//     $data = $request->except('image');
+
+//     // Simpan gambar jika ada
+//     if ($request->hasFile('image')) {
+//         $path = $request->file('image')->store('profile_images', 'public');
+//         $data['image'] = $path;
+//     }
+
+//     $user->update($data);
+
+//     return redirect()->route('myprofile')->with('success', 'Data berhasil disimpan.');
+// }
+
+
+//     public function edit()
+//     {
+//         $user = Auth::user();
+//         return view('profile.editformulir', compact('user'));
+//     }
+
+//     public function update(Request $request)
+// {
+//     $request->validate([
+//         'no_ktp' => 'required|string',
+//         'no_kk' => 'required|string',
+//         'nama_lengkap' => 'required|string',
+//         'tanggal_lahir' => 'required|date',
+//         'tempat_lahir' => 'required|string',
+//         'provinsi' => 'required|string',
+//         'pendidikan' => 'required|string',
+//         'nama_sekolah' => 'required|string',
+//         'tahun_lulus' => 'required|digits:4',
+//         'no_ijazah' => 'required|string',
+//         'tanggal_ijazah' => 'required|date',
+//         'nilai_rata_rata' => 'required|numeric',
+//         'jenis_kelamin' => 'required|string',
+//         'agama' => 'required|string',
+//         'status_perkawinan' => 'required|string',
+//         'tinggi_badan' => 'required|integer',
+//         'Alamat' => 'required|string',
+//         'no_hp' => 'required|string',
+//         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+//     ]);
+
+//     $user = Auth::user();
+
+//     $data = $request->except('image');
+
+//     // Simpan gambar jika ada
+//     if ($request->hasFile('image')) {
+//         $path = $request->file('image')->store('profile_images', 'public');
+//         $data['image'] = $path;
+//     }
+
+//     $user->update($data);
+
+//     return redirect()->route('myprofile')->with('success', 'Data berhasil diperbarui.');
+// }
+
+// }

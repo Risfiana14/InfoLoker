@@ -26,7 +26,5 @@ class Card extends Model
         'deskripsi',
         'kualifikasi',
         'tanggung_jawab',
-        'image1',
-        'image2',
-    ];
+    ];  
 }
