@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cards', function (Blueprint $table) {
+        Schema::create('loker', function (Blueprint $table) {
             $table->id(); // Kolom ID
             $table->string('nama'); // Nama card
             $table->date('tgl_lamaran'); // Tanggal lamaran
@@ -26,8 +26,6 @@ return new class extends Migration
             $table->text('deskripsi'); // Deskripsi pekerjaan
             $table->text('kualifikasi'); // Kualifikasi
             $table->text('tanggung_jawab'); // Tanggung jawab
-            $table->string('image1'); // URL gambar pertama
-            $table->string('image2')->nullable(); // URL gambar kedua (nullable)
             $table->timestamps(); // Kolom created_at dan updated_at
         });
     }

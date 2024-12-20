@@ -9,4 +9,9 @@ class lamaran extends Model
     protected $table = 'lamarans';
 
     protected $guarded = [];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

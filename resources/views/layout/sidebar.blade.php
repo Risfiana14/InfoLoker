@@ -481,7 +481,7 @@
                 <!-- Conditional Display based on role -->
                 @if(auth()->user()->role == 2) <!-- Role = 2, User is employer -->
                     <li class="nav-item">
-                        <a href="{{ route('cards.index') }}">
+                        <a href="{{ route('loker.index') }}">
                             <i class="fas fa-plus-circle"></i>
                             <p>Tambahkan Lowongan</p>
                         </a>

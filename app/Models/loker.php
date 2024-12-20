@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Card extends Model
+class loker extends Model
 {
     use HasFactory;
 
-    protected $table = 'cards';
+    protected $table = 'loker';
 
     // Tambahkan kolom yang dapat diisi
     protected $fillable = [
@@ -26,5 +26,5 @@ class Card extends Model
         'deskripsi',
         'kualifikasi',
         'tanggung_jawab',
-    ];  
+    ];
 }

@@ -7,7 +7,7 @@ use App\Http\Controllers\LowonganController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LamaranController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CardController;
+use App\Http\Controllers\LokerController;
 
 // MIDLEWARE
 Route::middleware(['web', 'guest'])->group(function () {
@@ -34,12 +34,13 @@ Route::middleware(['web', 'auth'])->group(function () {
     // Route::post('/editformulir', [ProfileController::class, 'update'])->name('editformulir.update');
 
     // LAMARAN
-    Route::get('cards', [CardController::class, 'index'])->name('cards.index');
-    Route::get('cards/create', [CardController::class, 'create'])->name('cards.create');
-    Route::post('cards', [CardController::class, 'store'])->name('cards.store');
-    Route::get('cards/{card}/edit', [CardController::class, 'edit'])->name('cards.edit');
-    Route::put('cards/{card}', [CardController::class, 'update'])->name('cards.update');
-    Route::delete('cards/{card}', [CardController::class, 'destroy'])->name('cards.destroy');
+    Route::get('loker', [LokerController::class, 'index'])->name('loker.index');
+    Route::get('loker/create', [LokerController::class, 'create'])->name('loker.create');
+    Route::get('loker/{loker}/edit', [LokerController::class, 'edit'])->name('loker.edit');
+    Route::post('loker', [LokerController::class, 'store'])->name('loker.store');
+    Route::put('loker/{loker}', [LokerController::class, 'update'])->name('loker.update');
+    Route::delete('loker/{loker}', [LokerController::class, 'destroy'])->name('loker.destroy');
+    Route::get('/lamaran/show/{loker}', [LamaranController::class, 'show'])->name('lamaran.show');
 
 
     // LOWONGAN

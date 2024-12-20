@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Card;
+use App\Models\loker;
 
 class LowonganController extends Controller
 {
@@ -25,7 +25,7 @@ class LowonganController extends Controller
     public function index()
     {
         // Ambil semua data dari tabel cards
-        $cards = Card::all();
+        $cards = loker::all();
 
         // Kirim data cards ke view
         return view('lowongan.index', compact('cards'));
@@ -38,7 +38,7 @@ class LowonganController extends Controller
     public function lamar($id)
     {
         // Ambil data berdasarkan ID
-        $card = Card::find($id);
+        $card = loker::find($id);
 
         // Jika data tidak ditemukan, redirect ke halaman lain (misalnya halaman lowongan)
         if (!$card) {
@@ -48,6 +48,6 @@ class LowonganController extends Controller
         // Kirimkan data ke view
         return view('lowongan.lamar', compact('card'));
     }
-        
+
 
 }

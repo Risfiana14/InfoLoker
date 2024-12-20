@@ -14,7 +14,7 @@
                 <div class="card">
                     <h5 class="card-header">Form Tambah Card</h5>
                     <div class="card-body">
-                        <form action="{{ route('cards.store') }}" method="POST">
+                        <form action="{{ route('loker.store') }}" method="POST">
                             @csrf
                             <div class="mb-3">
                                 <label for="nama" class="form-label">Nama</label>

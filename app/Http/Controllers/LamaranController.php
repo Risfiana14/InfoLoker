@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\lamaran;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LamaranController extends Controller
 {
@@ -45,6 +46,7 @@ class LamaranController extends Controller
         lamaran::create([
             'dokumen' => $path,
             'isi_lamaran' => $validatedData['isi_lamaran'],
+            'user_id' => Auth::id()
         ]);
 
         // Redirect with a success message
@@ -55,9 +57,10 @@ class LamaranController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(lamaran $lamaran)
+    public function show($id)
     {
-        //
+        $lamaran = lamaran::find($id);
+        return view('lamaran.show', compact('lamaran'));
     }
 
     /**

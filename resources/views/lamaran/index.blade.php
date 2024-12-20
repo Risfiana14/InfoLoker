@@ -76,7 +76,7 @@
 
     <!-- Create Button -->
     <div class="mb-3">
-        <a href="{{ route('cards.create') }}" class="btn btn-success">
+        <a href="{{ route('loker.create') }}" class="btn btn-success">
             <i class="fas fa-plus-circle"></i> Tambah Lowongan
         </a>
     </div>
@@ -108,14 +108,16 @@
                                     <td>{{ $card->lokasi }}</td>
                                     <td>
                                         <!-- Edit Button -->
-                                        <a href="{{ route('cards.edit', $card->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="{{ route('loker.edit', $card->id) }}" class="btn btn-warning btn-sm">Edit</a>
 
                                         <!-- Delete Button -->
-                                        <form action="{{ route('cards.destroy', $card->id) }}" method="POST" style="display:inline-block;">
+                                        <form action="{{ route('loker.destroy', $card->id) }}" method="POST" style="display:inline-block;">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus lowongan ini?')">Hapus</button>
                                         </form>
+
+                                        <a href="{{ route('lamaran.show', $card->id) }}" class="btn btn-sm btn-primary">Show</a>
                                     </td>
                                 </tr>
                             @endforeach

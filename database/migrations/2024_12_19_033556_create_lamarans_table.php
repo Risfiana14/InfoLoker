@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('dokumen');
             $table->string('isi_lamaran');
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('loker_id')->references('id')->on('loker');
             $table->timestamps();
         });
     }

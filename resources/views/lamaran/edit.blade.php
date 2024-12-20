@@ -19,48 +19,48 @@
                 <h5 class="card-header">Form Edit Lowongan</h5>
                 <div class="card-body">
                     <!-- Form untuk edit lowongan -->
-                    <form action="{{ route('cards.update', $card->id) }}" method="POST">
+                    <form action="{{ route('loker.update', $loker->id) }}" method="POST">
                         @csrf
                         @method('PUT')
 
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama Lowongan</label>
-                            <input type="text" id="nama" name="nama" class="form-control" value="{{ old('nama', $card->nama) }}" required>
+                            <input type="text" id="nama" name="nama" class="form-control" value="{{ old('nama', $loker->nama) }}" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="tgl_lamaran" class="form-label">Tanggal Lamaran</label>
-                            <input type="date" id="tgl_lamaran" name="tgl_lamaran" class="form-control" value="{{ old('tgl_lamaran', $card->tgl_lamaran) }}" required>
+                            <input type="date" id="tgl_lamaran" name="tgl_lamaran" class="form-control" value="{{ old('tgl_lamaran', $loker->tgl_lamaran) }}" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="bidang" class="form-label">Bidang</label>
-                            <input type="text" id="bidang" name="bidang" class="form-control" value="{{ old('bidang', $card->bidang) }}" required>
+                            <input type="text" id="bidang" name="bidang" class="form-control" value="{{ old('bidang', $loker->bidang) }}" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="gaji" class="form-label">Gaji</label>
-                            <input type="number" id="gaji" name="gaji" class="form-control" value="{{ old('gaji', $card->gaji) }}" required>
+                            <input type="number" id="gaji" name="gaji" class="form-control" value="{{ old('gaji', $loker->gaji) }}" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="lokasi" class="form-label">Lokasi</label>
-                            <input type="text" id="lokasi" name="lokasi" class="form-control" value="{{ old('lokasi', $card->lokasi) }}" required>
+                            <input type="text" id="lokasi" name="lokasi" class="form-control" value="{{ old('lokasi', $loker->lokasi) }}" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="deskripsi" class="form-label">Deskripsi</label>
-                            <textarea id="deskripsi" name="deskripsi" class="form-control" required>{{ old('deskripsi', $card->deskripsi) }}</textarea>
+                            <textarea id="deskripsi" name="deskripsi" class="form-control" required>{{ old('deskripsi', $loker->deskripsi) }}</textarea>
                         </div>
 
                         <div class="mb-3">
                             <label for="kualifikasi" class="form-label">Kualifikasi</label>
-                            <textarea id="kualifikasi" name="kualifikasi" class="form-control" required>{{ old('kualifikasi', $card->kualifikasi) }}</textarea>
+                            <textarea id="kualifikasi" name="kualifikasi" class="form-control" required>{{ old('kualifikasi', $loker->kualifikasi) }}</textarea>
                         </div>
 
                         <div class="mb-3">
                             <label for="tanggung_jawab" class="form-label">Tanggung Jawab</label>
-                            <textarea id="tanggung_jawab" name="tanggung_jawab" class="form-control" required>{{ old('tanggung_jawab', $card->tanggung_jawab) }}</textarea>
+                            <textarea id="tanggung_jawab" name="tanggung_jawab" class="form-control" required>{{ old('tanggung_jawab', $loker->tanggung_jawab) }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Simpan</button>
                     </form>
