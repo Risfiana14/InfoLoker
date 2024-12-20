@@ -12,6 +12,7 @@ use App\Http\Controllers\job_applicantsController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\PelatihanController;
 use App\Http\Controllers\RegisController;
+use App\Http\Controllers\NoteController;
 
 
 Route::middleware(['web', 'guest'])->group(function () {
@@ -105,3 +106,9 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/job', [JobController::class, 'index'])->name('job.index');
+
+Route::get('/notes/all', [NoteController::class, 'index'])->name('notes.index');
+Route::post('/notes/store', [NoteController::class, 'store'])->name('notes.store');
+Route::delete('/notes/{id}', [NoteController::class, 'destroy'])->name('notes.destroy');
+Route::resource('notes', NoteController::class);
+

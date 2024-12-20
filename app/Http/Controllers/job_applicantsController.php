@@ -52,16 +52,19 @@ class job_applicantsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $jobApplicant = JobApplicant::find($id);
+        $jobApplicant = JobApplicant::findOrFail($id); // Akan melempar error jika null
+    
         $jobApplicant->name = $request->name;
         $jobApplicant->email = $request->email;
         $jobApplicant->address = $request->address;
         $jobApplicant->phone_number = $request->phone_number;
         $jobApplicant->cv = $request->cv;
         $jobApplicant->company_id = $request->company_id;
+    
         $jobApplicant->save();
+    
         return redirect()->route('pelamar.index');
-    }
+    }    
 
     /**
      * Menghapus data job applicant

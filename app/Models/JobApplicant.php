@@ -10,6 +10,8 @@ class JobApplicant extends Model
 {
     use HasFactory;
 
+    protected $table = 'job_applicants';
+
     protected $fillable = [
         'name',
         'email',

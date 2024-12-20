@@ -54,7 +54,7 @@
               <i class="fas fa-desktop"></i>
               <p>Lowongan Pekerjaan</p>
             </a>
-          </li>
+          </li> 
 
           <li class="nav-item">
             <a href="{{ route('pelatihan.index') }}">
@@ -62,10 +62,18 @@
               <p>Pelatihan</p>
             </a>
           </li>
+
           <li class="nav-item">
-            <a href="{{ route('pelatihan.index') }}">
+            <a href="{{ route('pelamar.index') }}">
               <i class="fas fa-desktop"></i>
-              <p>Tanggalan</p>
+              <p>Pelamar</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/notes/all">
+              <i class="fas fa-desktop"></i>
+              <p>Note</p>
             </a>
           </li>
 
