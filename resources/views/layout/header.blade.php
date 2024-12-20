@@ -20,9 +20,9 @@
                 </ul>
               </li>
               <li><a class="ticker-btn" href="{{ route('register')}}">Signup</a></li>
-              <li><a class="ticker-btn" href="{{ route('login')}}">Login</a></li>				          				          
+              <li><a class="ticker-btn" href="{{ route('login')}}">Login</a></li>
             </ul>
-          </nav><!-- #nav-menu-container -->		    		
+          </nav><!-- #nav-menu-container -->
         </div>
     </div>
   </header><!-- #header -->

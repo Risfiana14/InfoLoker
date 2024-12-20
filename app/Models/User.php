@@ -52,7 +52,7 @@ class User extends Authenticatable
         'agama',
         'status_perkawinan',
         'tinggi_badan',
-        'Alamat',
+        'alamat',
         'no_hp',
         'image',
     ];

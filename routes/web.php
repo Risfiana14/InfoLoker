@@ -26,7 +26,12 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
     // PROFILE
-    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    // Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
     // Route::get('/myprofile', [ProfileController::class, 'index'])->name('myprofile');
     // Route::get('/isiformulir', [ProfileController::class, 'create'])->name('isiformulir');
     // Route::post('/isiformulir', [ProfileController::class, 'store'])->name('isiformulir.store');
@@ -45,7 +50,7 @@ Route::middleware(['web', 'auth'])->group(function () {
 
     // LOWONGAN
     Route::get('/lowongan', [LowonganController::class, 'index'])->name('lowongan');
-    // Route::get('/lowongan/lamaran', [LowonganController::class, 'lamar'])->name('lowongan.lamar');
+
     Route::get('/lowongan/{id}/lamar', [LowonganController::class, 'lamar'])->name('lowongan.lamar');
     Route::post('kirim-lamaran', [LamaranController::class, 'store'])->name('kirim.lamaran');
 

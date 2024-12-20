@@ -432,40 +432,40 @@
     </div>
 
     <!-- User Profile Section -->
-    <li class="nav-item topbar-user dropdown hidden-caret">
-        <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
-            <div class="avatar-sm">
-                <img src="assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
-            </div>
-            <span class="profile-username">
-                <span class="op-7">Hi,</span>
-                <span class="fw-bold">{{ auth()->user()->nama_lengkap }}</span>
-            </span>
-        </a>
-        <ul class="dropdown-menu dropdown-user animated fadeIn">
-            <div class="dropdown-user-scroll scrollbar-outer">
-                <li>
-                    <div class="user-box">
-                        <div class="avatar-lg">
-                            <img src="assets/img/profile.jpg" alt="image profile" class="avatar-img rounded" />
+        {{-- <li class="nav-item topbar-user dropdown hidden-caret">
+            <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                <div class="avatar-sm">
+                    <img src="assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
+                </div>
+                <span class="profile-username">
+                    <span class="op-7">Hi,</span>
+                    <span class="fw-bold">{{ auth()->user()->nama_lengkap }}</span>
+                </span>
+            </a>
+            <ul class="dropdown-menu dropdown-user animated fadeIn">
+                <div class="dropdown-user-scroll scrollbar-outer">
+                    <li>
+                        <div class="user-box">
+                            <div class="avatar-lg">
+                                <img src="assets/img/profile.jpg" alt="image profile" class="avatar-img rounded" />
+                            </div>
+                            <div class="u-text">
+                                <h4>{{ auth()->user()->nama_lengkap }}</h4>
+                                <p class="text-muted">{{ auth()->user()->email }}</p>
+                            </div>
                         </div>
-                        <div class="u-text">
-                            <h4>{{ auth()->user()->nama_lengkap }}</h4>
-                            <p class="text-muted">{{ auth()->user()->email }}</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ route('profile') }}">My Profile</a>
-                    <a class="dropdown-item" href="#">Inbox</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
-                    @csrf
-                </li>
-            </div>
-        </ul>
-    </li>
+                    </li>
+                    <li>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ route('profile') }}">My Profile</a>
+                        <a class="dropdown-item" href="#">Inbox</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+                        @csrf
+                    </li>
+                </div>
+            </ul>
+        </li> --}}
 
     <!-- Sidebar Content -->
     <div class="sidebar-wrapper scrollbar scrollbar-inner">

@@ -65,16 +65,16 @@
                     <!-- Navbar Header -->
                     @include('layout.navbar')
                     <!-- End Navbar -->
-
-                    @yield('content')
-
+                    <main>
+                        @yield('content')
+                    </main>
                     @include('layout.footer')
                 </div>
 
                 <!-- Custom template | don't include it in your project! -->
                 <div class="custom-template">
                     <div class="title">Settings</div>
-        
+
                     <div class="custom-toggle">
                         <i class="icon-settings"></i>
                     </div>
@@ -82,12 +82,12 @@
                 <!-- End Custom template -->
             </div>
             <!--   Core JS Files   -->
-          @include('layout.js')
+            @include('layout.js')
 
             <!-- Modal -->
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -124,5 +124,6 @@
 
 
 </body>
+
 
 </html>
