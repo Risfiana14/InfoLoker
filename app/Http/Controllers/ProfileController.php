@@ -105,20 +105,21 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
     // Display user profile
     public function index()
     {
-        $user = auth()->user(); // Get authenticated user
+        $user = Auth::user(); // Get authenticated user
         return view('profile.index', compact('user'));
     }
 
     // Show edit form
     public function edit()
     {
-        $user = auth()->user(); // Get authenticated user
+        $user = Auth::user(); // Get authenticated user
         return view('profile.edit', compact('user'));
     }
 
@@ -127,7 +128,7 @@ class ProfileController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,' . auth()->id(),
+            'email' => 'required|string|email|max:255|unique:users,email,' . Auth::id(),
             'no_ktp' => 'nullable|string|max:50',
             'no_kk' => 'nullable|string|max:50',
             'nama_lengkap' => 'nullable|string|max:255',
@@ -148,7 +149,7 @@ class ProfileController extends Controller
             'no_hp' => 'nullable|string|max:20',
         ]);
 
-        $user = auth()->user();
+        $user = Auth::user();
         $user->update($request->all());
 
         return redirect()->route('profile.index')->with('success', 'Profile updated successfully.');
@@ -157,7 +158,7 @@ class ProfileController extends Controller
     // Show delete confirmation
     public function destroy()
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $user->delete();
 
         return redirect()->route('login')->with('success', 'Account deleted successfully.');

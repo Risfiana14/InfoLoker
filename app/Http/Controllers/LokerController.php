@@ -46,7 +46,7 @@ public function store(Request $request)
     loker::create($validated);
 
     // Redirect to the index page with a success message
-    return redirect()->route('cards.index')->with('success', 'Lowongan berhasil ditambahkan');
+    return redirect()->back()->with('success', 'Lowongan berhasil ditambahkan');
 }
 
 // Method to show the edit form for an existing card

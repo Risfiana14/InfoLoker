@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\lamaran;
 use Illuminate\Http\Request;
 use App\Models\loker;
+use Illuminate\Support\Facades\Auth;
 
 class LowonganController extends Controller
 {
@@ -37,17 +39,20 @@ class LowonganController extends Controller
 
     public function lamar($id)
     {
-        // Ambil data berdasarkan ID
-        $card = loker::find($id);
+        // Fetch the loker details
+        $card = Loker::find($id);
 
-        // Jika data tidak ditemukan, redirect ke halaman lain (misalnya halaman lowongan)
+        // Redirect if the loker does not exist
         if (!$card) {
             return redirect()->route('lowongan.index')->with('error', 'Pekerjaan tidak ditemukan');
         }
 
-        // Kirimkan data ke view
-        return view('lowongan.lamar', compact('card'));
+        // Check if the user has already applied for this loker and fetch the application details
+        $application = Lamaran::where('user_id', Auth::id())
+            ->where('loker_id', $id)
+            ->first();
+
+        // Pass the data and application status to the view
+        return view('lowongan.lamar', compact('card', 'application'));
     }
-
-
 }

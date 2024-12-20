@@ -117,6 +117,18 @@ class User extends Authenticatable
         return $this->jenisUser->jenis_user === 'user';
     }
 
+    // Relationship: User has many Lamarans
+    public function lamarans()
+    {
+        return $this->hasMany(Lamaran::class);
+    }
+
+    // Relationship: User can apply to many Loker through Lamaran
+    public function lokers()
+    {
+        return $this->hasManyThrough(Loker::class, Lamaran::class, 'user_id', 'id', 'id', 'loker_id');
+    }
+
     // Uncomment if needed
     // public function isAnggota(): bool
     // {

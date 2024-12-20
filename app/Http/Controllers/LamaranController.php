@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\lamaran;
+use App\Models\loker;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class LamaranController extends Controller
 {
@@ -27,7 +29,7 @@ class LamaranController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         // Validate input
         $validatedData = $request->validate([
@@ -35,18 +37,20 @@ class LamaranController extends Controller
             'isi_lamaran' => 'required|string|max:1000',
         ]);
 
-        // Handle file upload
+        // Handle file upload and preserve the original filename
         $path = null;
         if ($request->hasFile('dokumen_lamaran')) {
             $file = $request->file('dokumen_lamaran');
-            $path = $file->store('uploads', 'public'); // Save to 'storage/app/public/uploads'
+            $originalFilename = $file->getClientOriginalName(); // Get the original filename
+            $path = $file->storeAs('uploads', $originalFilename, 'public'); // Save with the original filename
         }
 
         // Save data to the database
         lamaran::create([
             'dokumen' => $path,
             'isi_lamaran' => $validatedData['isi_lamaran'],
-            'user_id' => Auth::id()
+            'user_id' => Auth::id(),
+            'loker_id' => $id,
         ]);
 
         // Redirect with a success message
@@ -54,13 +58,43 @@ class LamaranController extends Controller
     }
 
 
+
     /**
      * Display the specified resource.
      */
     public function show($id)
     {
+        // Get the loker
+        $loker = Loker::findOrFail($id);
+
+        // Get all users who applied for this loker
+        $users = DB::table('lamarans')
+            ->join('users', 'lamarans.user_id', '=', 'users.id')
+            ->where('lamarans.loker_id', $id)
+            ->select('users.*', 'lamarans.id as lamaran_id', 'lamarans.isi_lamaran', 'lamarans.dokumen', 'lamarans.status')
+            ->get();
+
+        return view('lamaran.show', compact('loker', 'users'));
+    }
+
+
+    public function accept($id)
+    {
         $lamaran = lamaran::find($id);
-        return view('lamaran.show', compact('lamaran'));
+
+        $lamaran->status = 'accepted';
+        $lamaran->save();
+
+        return redirect()->back()->with('success', 'Lamaran Diterima');
+    }
+    public function decline($id)
+    {
+        $lamaran = lamaran::find($id);
+
+        $lamaran->status = 'declined';
+        $lamaran->save();
+
+        return redirect()->back()->with('success', 'Lamaran Ditolak');
     }
 
     /**

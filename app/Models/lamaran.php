@@ -14,4 +14,10 @@ class lamaran extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function loker()
+    {
+        return $this->belongsTo(Loker::class);
+    }
+
 }

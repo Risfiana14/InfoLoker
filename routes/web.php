@@ -48,11 +48,15 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::get('/lamaran/show/{loker}', [LamaranController::class, 'show'])->name('lamaran.show');
 
 
+    Route::get('/lamaran/accept/{loker}', [LamaranController::class, 'accept'])->name('lamaran.accept');
+    Route::get('/lamaran/decline/{loker}', [LamaranController::class, 'decline'])->name('lamaran.decline');
+
+
     // LOWONGAN
     Route::get('/lowongan', [LowonganController::class, 'index'])->name('lowongan');
 
     Route::get('/lowongan/{id}/lamar', [LowonganController::class, 'lamar'])->name('lowongan.lamar');
-    Route::post('kirim-lamaran', [LamaranController::class, 'store'])->name('kirim.lamaran');
+    Route::post('kirim-lamaran/{id}', [LamaranController::class, 'store'])->name('kirim.lamaran');
 
     // Roles
     Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.create');
