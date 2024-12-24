@@ -49,7 +49,7 @@
                         <p>{{ $card->tanggung_jawab }}</p>
 
 
-                        <div class="d-flex">
+                        {{-- <div class="d-flex">
                             @if ($card->image1)
                                 <div class="row justify-content-center">
                                     <div class="col-8">
@@ -75,7 +75,7 @@
                                     </div>
                                 </div>
                             @endif
-                        </div>
+                        </div> --}}
 
                         @if ($application)
                             <hr>

@@ -34,9 +34,10 @@
                     </div>
                     <div class="flex items-center mb-2">
                         <h2 class="text-lg font-bold">{{ $card->nama }}</h2>
-                        <img alt="{{ $card->nama }} logo" class="ml-2 w-6 h-6" height="24"
+                        <span alt="{{ $card->nama }} logo" class="ml-2 w-6 h-6"/>
+                        {{-- <img alt="{{ $card->nama }} logo" class="ml-2 w-6 h-6" height="24"
                             src="{{ $card->image1 }}"
-                            width="24" />
+                            width="24" /> --}}
                     </div>
                     <h3 class="text-base font-semibold mb-2">{{ $card->bidang }}</h3>
                     <div class="flex flex-wrap gap-2 mb-2">

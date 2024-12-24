@@ -413,8 +413,9 @@
     <div class="sidebar-logo">
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark">
-            <a href="index.html" class="logo">
-                <img src="{{ asset('assets/img/kaiadmin/logo_light.svg') }}" alt="navbar brand" class="navbar-brand" height="20"/>
+            <a href="/dashboard" class="logo">
+                <img src="assets/img/logoandalan.png" alt="Logo" style="height: 24px; vertical-align: middle; margin-right: 8px;">
+                <span style="color: orange;">Info</span><span style="color: blue;">Loker</span>
             </a>
             <div class="nav-toggle">
                 <button class="btn btn-toggle toggle-sidebar">

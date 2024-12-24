@@ -11,7 +11,8 @@ class dashboard extends Controller
     public function index()
     {
         $user = Auth::user(); // Ambil pengguna yang sedang login
-        return view('layout.main', compact('user')); // Kirimkan data pengguna ke view
+        // return view('layout.main', compact('user')); // Kirimkan data pengguna ke view
+        return view('dashboard', compact('user')); // Kirimkan data pengguna ke view
     }
 
 
